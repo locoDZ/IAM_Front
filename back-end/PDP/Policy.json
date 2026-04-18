@@ -1,0 +1,185 @@
+{
+  "version": "1.0",
+  "description": "ABAC Policy Definitions - aligned with users.json and resourese.json",
+  "default_effect": "deny",
+
+  "policies": [
+
+    {
+      "id": "POL-001",
+      "name": "Admin Full Access (Internal)",
+      "description": "Admins with high clearance located at HQ have unrestricted access",
+      "effect": "allow",
+      "priority": 1,
+      "conditions": {
+        "operator": "AND",
+        "rules": [
+          { "attribute": "user.role",      "operator": "EQUAL", "value": "Admin" },
+          { "attribute": "user.location",  "operator": "EQUAL", "value": "HQ" },
+          { "attribute": "user.clearance", "operator": "EQUAL", "value": "high" }
+        ]
+      }
+    },
+
+    {
+      "id": "POL-002",
+      "name": "Department Isolation",
+      "description": "Users can only access resources from their own department. Admins are exempt.",
+      "effect": "deny",
+      "priority": 10,
+      "conditions": {
+        "operator": "AND",
+        "rules": [
+          { "attribute": "user.department",  "operator": "NOT_EQUAL", "value_ref": "resource.department" },
+          { "attribute": "user.role",        "operator": "NOT_IN",    "value": ["Admin"] }
+        ]
+      }
+    },
+
+    {
+      "id": "POL-003",
+      "name": "Secret Resource - High Clearance Required",
+      "description": "Only users with high clearance can access secret-classified resources",
+      "effect": "deny",
+      "priority": 20,
+      "conditions": {
+        "operator": "AND",
+        "rules": [
+          { "attribute": "resource.classification", "operator": "EQUAL",  "value": "secret" },
+          { "attribute": "user.clearance",          "operator": "NOT_IN", "value": ["high"] }
+        ]
+      }
+    },
+
+    {
+      "id": "POL-004",
+      "name": "Confidential Resource - Medium or High Clearance Required",
+      "description": "Users must have at least medium clearance for confidential resources",
+      "effect": "deny",
+      "priority": 21,
+      "conditions": {
+        "operator": "AND",
+        "rules": [
+          { "attribute": "resource.classification", "operator": "EQUAL",  "value": "confidential" },
+          { "attribute": "user.clearance",          "operator": "NOT_IN", "value": ["medium", "high"] }
+        ]
+      }
+    },
+
+    {
+      "id": "POL-005",
+      "name": "Time-Based Access Control",
+      "description": "Access is only permitted between 08:00 and 18:00. Admins are exempt.",
+      "effect": "deny",
+      "priority": 30,
+      "conditions": {
+        "operator": "AND",
+        "rules": [
+          { "attribute": "user.role", "operator": "NOT_IN", "value": ["Admin"] },
+          {
+            "operator": "OR",
+            "rules": [
+              { "attribute": "environment.time", "operator": "LESS_THAN",    "value": "08:00" },
+              { "attribute": "environment.time", "operator": "GREATER_THAN", "value": "18:00" }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "POL-006",
+      "name": "External Access - Deny Secret Resources",
+      "description": "Users accessing from outside HQ cannot access secret resources",
+      "effect": "deny",
+      "priority": 40,
+      "conditions": {
+        "operator": "AND",
+        "rules": [
+          { "attribute": "resource.classification", "operator": "EQUAL",  "value": "secret" },
+          { "attribute": "user.location",           "operator": "NOT_IN", "value": ["HQ"] }
+        ]
+      }
+    },
+
+    {
+      "id": "POL-007",
+      "name": "External Access - Deny Confidential Resources for Remote Users",
+      "description": "Remote users cannot access confidential resources",
+      "effect": "deny",
+      "priority": 41,
+      "conditions": {
+        "operator": "AND",
+        "rules": [
+          { "attribute": "resource.classification", "operator": "EQUAL", "value": "confidential" },
+          { "attribute": "user.location",           "operator": "EQUAL", "value": "Remote" }
+        ]
+      }
+    },
+
+    {
+      "id": "POL-008",
+      "name": "Public Resource Open Read Access",
+      "description": "All authenticated users can read public resources from any location",
+      "effect": "allow",
+      "priority": 5,
+      "conditions": {
+        "operator": "AND",
+        "rules": [
+          { "attribute": "resource.classification", "operator": "EQUAL", "value": "public" },
+          { "attribute": "action",                  "operator": "EQUAL", "value": "Read" }
+        ]
+      }
+    },
+
+    {
+      "id": "POL-009",
+      "name": "Employee Read-Only Enforcement",
+      "description": "Users with role Employee can only perform Read actions",
+      "effect": "deny",
+      "priority": 50,
+      "conditions": {
+        "operator": "AND",
+        "rules": [
+          { "attribute": "user.role", "operator": "EQUAL",  "value": "Employee" },
+          { "attribute": "action",    "operator": "NOT_IN", "value": ["Read"] }
+        ]
+      }
+    },
+
+    {
+      "id": "POL-010",
+      "name": "Manager Cannot Delete",
+      "description": "Managers are allowed Read and Write but not Delete",
+      "effect": "deny",
+      "priority": 51,
+      "conditions": {
+        "operator": "AND",
+        "rules": [
+          { "attribute": "user.role", "operator": "EQUAL", "value": "Manager" },
+          { "attribute": "action",    "operator": "EQUAL", "value": "Delete" }
+        ]
+      }
+    }
+
+  ],
+
+  "clearance_hierarchy": {
+    "low":    0,
+    "medium": 1,
+    "high":   2
+  },
+
+  "classification_hierarchy": {
+    "public":       0,
+    "confidential": 1,
+    "secret":       2
+  },
+
+  "metadata": {
+    "created_at": "2026-04-17",
+    "author": "Security Team",
+    "review_cycle": "quarterly",
+    "compatible_with": ["users.json", "resourese.json", "permisions.json"]
+  }
+}

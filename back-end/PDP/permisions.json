@@ -1,0 +1,5 @@
+{
+    "Admin": ["Read", "Write", "Delete"],
+    "Manager": ["Read", "Write"],
+    "Employee": ["Read"]
+}

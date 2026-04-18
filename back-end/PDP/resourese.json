@@ -1,0 +1,22 @@
+[
+  {
+    "resource": "employee_records",
+    "department": "HR",
+    "classification": "confidential"
+  },
+  {
+    "resource": "financial_reports",
+    "department": "Finance",
+    "classification": "secret"
+  },
+  {
+    "resource": "system_logs",
+    "department": "IT",
+    "classification": "confidential"
+  },
+  {
+    "resource": "operations_schedule",
+    "department": "Operations",
+    "classification": "public"
+  }
+]

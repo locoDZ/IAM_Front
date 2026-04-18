@@ -1,0 +1,34 @@
+[
+  {
+    "name": "bob",
+    "password": "12345",
+    "role": "Admin",
+    "department": "IT",
+    "clearance": "high",
+    "location": "HQ"
+  },
+  {
+    "name": "alice",
+    "password": "12345",
+    "role": "Manager",
+    "department": "HR",
+    "clearance": "high",
+    "location": "HQ"
+  },
+  {
+    "name": "david",
+    "password": "12345",
+    "role": "Employee",
+    "department": "Finance",
+    "clearance": "medium",
+    "location": "Branch Office"
+  },
+  {
+    "name": "emma",
+    "password": "12345",
+    "role": "Employee",
+    "department": "Operations",
+    "clearance": "medium",
+    "location": "Remote"
+  }
+]

@@ -1,0 +1,149 @@
+{
+  "version": "1.0",
+  "engine_id": "ABAC-ENGINE-v1",
+  "description": "Policy Engine Configuration for Attribute-Based Access Control",
+
+  "settings": {
+    "default_decision": "deny",
+    "evaluation_strategy": "deny_overrides",
+    "stop_on_first_deny": true,
+    "log_decisions": true,
+    "audit_trail": true,
+    "policy_source": "./Policy.json",
+    "reload_on_change": true,
+    "cache_ttl_seconds": 60
+  },
+
+  "attributes": {
+    "user": {
+      "role":       { "type": "string", "required": true,  "allowed_values": ["Admin", "Manager", "Employee"] },
+      "department": { "type": "string", "required": true,  "allowed_values": ["IT", "HR", "Finance", "Operations"] },
+      "clearance":  { "type": "string", "required": true,  "allowed_values": ["low", "medium", "high"] },
+      "location":   { "type": "string", "required": true,  "allowed_values": ["HQ", "Branch Office", "Remote"] }
+    },
+    "resource": {
+      "resource":       { "type": "string", "required": true },
+      "department":     { "type": "string", "required": true },
+      "classification": { "type": "string", "required": true, "allowed_values": ["public", "confidential", "secret"] }
+    },
+    "environment": {
+      "time": { "type": "time", "format": "HH:MM", "required": true,  "source": "system_clock" },
+      "ip":   { "type": "ipv4",                    "required": false,
+                "trusted_ranges": ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"] }
+    },
+    "action": {
+      "type": "string",
+      "required": true,
+      "allowed_values": ["Read", "Write", "Delete"]
+    }
+  },
+
+  "operators": {
+    "EQUAL":        { "description": "Strict equality",                "types": ["string", "number", "boolean"] },
+    "NOT_EQUAL":    { "description": "Strict inequality",              "types": ["string", "number", "boolean"] },
+    "IN":           { "description": "Value exists in list",           "types": ["string", "number"] },
+    "NOT_IN":       { "description": "Value not in list",              "types": ["string", "number"] },
+    "LESS_THAN":    { "description": "Numeric or time less-than",      "types": ["number", "time"] },
+    "GREATER_THAN": { "description": "Numeric or time greater-than",   "types": ["number", "time"] },
+    "AND":          { "description": "All nested conditions must hold", "types": ["compound"] },
+    "OR":           { "description": "Any nested condition must hold",  "types": ["compound"] }
+  },
+
+  "evaluation_pipeline": [
+    { "step": 1, "name": "attribute_resolution",  "description": "Validate and resolve all user, resource, environment attributes", "on_failure": "deny" },
+    { "step": 2, "name": "policy_loading",         "description": "Load Policy.json, sort by priority ascending",                   "on_failure": "deny" },
+    { "step": 3, "name": "allow_pass",             "description": "Evaluate allow policies first (lowest priority numbers)",        "on_failure": "continue" },
+    { "step": 4, "name": "deny_pass",              "description": "Evaluate deny policies; first match stops evaluation",           "on_failure": "deny" },
+    { "step": 5, "name": "default_decision",       "description": "Apply default_decision if no policy matched",                    "on_failure": "deny" },
+    { "step": 6, "name": "audit_logging",          "description": "Write decision, matched policies, timestamp to audit log",       "on_failure": "continue" }
+  ],
+
+  "decision_response_schema": {
+    "decision":         "allow | deny",
+    "matched_policies": ["array of policy IDs that triggered"],
+    "reasons":          ["array of human-readable denial or grant reasons"],
+    "timestamp":        "ISO-8601 datetime",
+    "request_context": {
+      "user":        "user attribute snapshot",
+      "resource":    "resource attribute snapshot",
+      "action":      "requested action",
+      "environment": "environment attribute snapshot"
+    }
+  },
+
+  "example_requests": [
+    {
+      "label": "ALLOW - bob (Admin/HQ) deletes employee_records",
+      "input": {
+        "user":     { "name": "bob",   "role": "Admin",    "department": "IT",      "clearance": "high",   "location": "HQ" },
+        "resource": { "resource": "employee_records", "department": "HR",      "classification": "confidential" },
+        "action":   "Delete",
+        "environment": { "time": "10:00" }
+      },
+      "expected_decision": "allow",
+      "matched_policy": "POL-001"
+    },
+    {
+      "label": "DENY - alice (Manager/HR) tries to Delete employee_records",
+      "input": {
+        "user":     { "name": "alice", "role": "Manager",  "department": "HR",      "clearance": "high",   "location": "HQ" },
+        "resource": { "resource": "employee_records", "department": "HR",      "classification": "confidential" },
+        "action":   "Delete",
+        "environment": { "time": "10:00" }
+      },
+      "expected_decision": "deny",
+      "matched_policy": "POL-010"
+    },
+    {
+      "label": "DENY - david (Employee/Finance/Branch Office) reads financial_reports (secret)",
+      "input": {
+        "user":     { "name": "david", "role": "Employee", "department": "Finance", "clearance": "medium", "location": "Branch Office" },
+        "resource": { "resource": "financial_reports",  "department": "Finance", "classification": "secret" },
+        "action":   "Read",
+        "environment": { "time": "10:00" }
+      },
+      "expected_decision": "deny",
+      "matched_policy": "POL-006"
+    },
+    {
+      "label": "DENY - emma (Employee/Operations/Remote) accesses employee_records (confidential)",
+      "input": {
+        "user":     { "name": "emma",  "role": "Employee", "department": "Operations","clearance": "medium","location": "Remote" },
+        "resource": { "resource": "employee_records", "department": "HR",      "classification": "confidential" },
+        "action":   "Read",
+        "environment": { "time": "10:00" }
+      },
+      "expected_decision": "deny",
+      "matched_policy": "POL-002"
+    },
+    {
+      "label": "DENY - david (Employee) tries Write on operations_schedule (public)",
+      "input": {
+        "user":     { "name": "david", "role": "Employee", "department": "Finance", "clearance": "medium", "location": "Branch Office" },
+        "resource": { "resource": "operations_schedule","department": "Operations","classification": "public" },
+        "action":   "Write",
+        "environment": { "time": "10:00" }
+      },
+      "expected_decision": "deny",
+      "matched_policy": "POL-009"
+    },
+    {
+      "label": "DENY - alice outside business hours",
+      "input": {
+        "user":     { "name": "alice", "role": "Manager",  "department": "HR",      "clearance": "high",   "location": "HQ" },
+        "resource": { "resource": "employee_records", "department": "HR",      "classification": "confidential" },
+        "action":   "Read",
+        "environment": { "time": "22:00" }
+      },
+      "expected_decision": "deny",
+      "matched_policy": "POL-005"
+    }
+  ],
+
+  "metadata": {
+    "created_at": "2026-04-17",
+    "author": "Security Team",
+    "review_cycle": "quarterly",
+    "compatible_with": ["Policy.json", "users.json", "resourese.json", "permisions.json"]
+  }
+}
