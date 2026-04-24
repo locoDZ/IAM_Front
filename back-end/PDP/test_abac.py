@@ -54,10 +54,11 @@ ABAC_TESTS = [
         "denied", "POL-003"
     ),
     (
-        "POL-003 | emma (medium clearance) reads financial_reports (secret) [DENY]",
+        # emma is Operations, financial_reports is Finance → POL-002 fires first (priority 10 < 20)
+        "POL-002 | emma (Operations) reads financial_reports (Finance dept) [DENY]",
         {"username": "emma",  "resource": "financial_reports", "action": "Read",
          "mode": "abac", "time": "10:00"},
-        "denied", "POL-003"
+        "denied", "POL-002"
     ),
 
     # ── POL-005: Time-Based Access Control ────────────────────────────────────
@@ -80,28 +81,31 @@ ABAC_TESTS = [
         "granted", "POL-001"
     ),
 
-    # ── POL-006: External Access – Deny Secret Resources ─────────────────────
+    # ── POL-003 fires before POL-006 (priority 20 < 40) ──────────────────────
     (
-        "POL-006 | alice (Branch Office) reads financial_reports (secret) [DENY]",
-        # Simulate alice being at Branch Office by overriding in payload comment;
-        # david is our Branch Office user with Finance dept
+        # david is Finance (same dept as financial_reports) so POL-002 won't fire
+        # david has medium clearance + secret resource → POL-003 fires (priority 20)
+        # before POL-006 external access check (priority 40)
+        "POL-003 | david (Branch Office, medium clearance) reads financial_reports (secret) [DENY]",
         {"username": "david", "resource": "financial_reports", "action": "Read",
          "mode": "abac", "time": "10:00"},
-        "denied", "POL-006"
+        "denied", "POL-003"
     ),
 
-    # ── POL-007: Remote users denied confidential resources ───────────────────
+    # ── POL-002 fires before POL-007 for cross-dept remote users ─────────────
     (
-        "POL-007 | emma (Remote) reads employee_records (confidential) [DENY]",
+        # emma is Operations, employee_records is HR → POL-002 fires first (priority 10 < 41)
+        "POL-002 | emma (Remote/Operations) reads employee_records (HR) [DENY]",
         {"username": "emma", "resource": "employee_records",  "action": "Read",
          "mode": "abac", "time": "10:00"},
-        "denied", "POL-007"
+        "denied", "POL-002"
     ),
     (
-        "POL-007 | emma (Remote) reads system_logs (confidential) [DENY]",
+        # emma is Operations, system_logs is IT → POL-002 fires first (priority 10 < 41)
+        "POL-002 | emma (Remote/Operations) reads system_logs (IT) [DENY]",
         {"username": "emma", "resource": "system_logs",        "action": "Read",
          "mode": "abac", "time": "10:00"},
-        "denied", "POL-007"
+        "denied", "POL-002"
     ),
 
     # ── POL-008: Public Resource Open Read Access ─────────────────────────────

@@ -21,7 +21,7 @@ RBAC_TESTS = [
     # ── Admin (bob) ───────────────────────────────────────────────────────────
     (
         "Admin: Read employee_records",
-        {"username": "bo", "resource": "employee_records", "action": "Read",   "mode": "rbac"},
+        {"username": "bob", "resource": "employee_records", "action": "Read",   "mode": "rbac"},
         "granted"
     ),
     (

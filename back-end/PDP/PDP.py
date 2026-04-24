@@ -214,6 +214,7 @@ def authorize(request: AuthorizeRequest):
     # ── Common lookups ────────────────────────────────────────────────────────
     resource_info = get_resource(request.resource)
     if resource_info is None:
+        print(f"Resource '{request.resource}' not found in database"),
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail={"decision": "denied",
