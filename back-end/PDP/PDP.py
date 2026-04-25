@@ -12,11 +12,11 @@ app = FastAPI(
 )
 
 # ── File paths ────────────────────────────────────────────────────────────────
-USERS_FILE       = 'users.json'
-PERMISSIONS_FILE = 'permisions.json'
-RESOURCES_FILE   = 'resourese.json'
-POLICY_FILE      = 'Policy.json'
-
+# PDP.py fixed
+USERS_FILE       = '../data/users.json'
+PERMISSIONS_FILE = '../data/permisions.json'
+RESOURCES_FILE   = '../data/resourese.json'
+POLICY_FILE      = '../data/Policy.json'
 # ── Pydantic models ───────────────────────────────────────────────────────────
 class AuthorizeRequest(BaseModel):
     username:  str

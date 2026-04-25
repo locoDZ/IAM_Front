@@ -2,21 +2,25 @@
   {
     "resource": "employee_records",
     "department": "HR",
-    "classification": "confidential"
+    "classification": "confidential",
+    "file": "employee_records.txt"
   },
   {
     "resource": "financial_reports",
     "department": "Finance",
-    "classification": "secret"
+    "classification": "secret",
+    "file": "financial_reports.txt"
   },
   {
     "resource": "system_logs",
     "department": "IT",
-    "classification": "confidential"
+    "classification": "confidential",
+    "file": "system_logs.txt"
   },
   {
     "resource": "operations_schedule",
     "department": "Operations",
-    "classification": "public"
+    "classification": "public",
+    "file": "operations_schedule.txt"
   }
 ]
