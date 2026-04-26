@@ -32,11 +32,25 @@
       "location": "external",
       "plain_password": "password123"
     },
-    "loco": {
-      "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
-      "role": "Employee",
-      "department": "HR",
-      "clearance": "public",
+    "Locodz": {
+      "password": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5",
+      "role": "Admin",
+      "department": "IT",
+      "clearance": "secret",
+      "location": "internal"
+    },
+    "finance": {
+      "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "role": "Manager",
+      "department": "Finance",
+      "clearance": "confidential",
+      "location": "internal"
+    },
+    "ri": {
+      "password": "6b51d431df5d7f141cbececcf79edf3dd861c3b4069f0b11661a3eefacbba918",
+      "role": "Manager",
+      "department": "Finance",
+      "clearance": "confidential",
       "location": "internal"
     }
   }

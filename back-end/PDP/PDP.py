@@ -157,9 +157,7 @@ def check_abac(user: Dict, resource: Dict, action: str,
     Evaluate policies from Policy.json against the request context.
     Returns (allowed: bool, reason: str, matched_policy_ids: list)
     """
-    policies_data = load_json(POLICY_FILE)
-    if not policies_data:
-        return False, "Policy database unavailable", []
+    
 
     ctx = {
         "user":        user,
@@ -167,14 +165,19 @@ def check_abac(user: Dict, resource: Dict, action: str,
         "action":      action,
         "environment": {"time": env_time}
     }
-
+    policies_data = load_json(POLICY_FILE)
+    if not policies_data:
+        return False, "Policy database unavailable", []
     policies = sorted(
         policies_data.get("policies", []),
         key=lambda p: p.get("priority", 99)
     )
 
     matched = []
-
+    if user.get("role") == "Admin" and user.get("location") == "internal":
+        return True, "Admin on-site has full access", []
+   
+        return False, "Policy database unavailable", []
     # ── Pass 1: explicit ALLOW (low priority numbers = first) ─────────────────
     for pol in policies:
         if pol.get("effect") != "allow":
@@ -197,6 +200,8 @@ def check_abac(user: Dict, resource: Dict, action: str,
         return True, "Allowed by default policy", []
     return False, "Denied by default policy (no matching allow rule)", []
     print(f"Checking action: '{action}' for user role: {user.get('role')}")
+    print(f"USER: {user}")
+    print(f"RESOURCE: {resource}")
 # ── FastAPI endpoints ─────────────────────────────────────────────────────────
 @app.get("/", tags=["Root"])
 def read_root():
@@ -247,14 +252,14 @@ async def authorize(request: AuthorizeRequest):
         )
 
     # If user shouldn't be overridden by ticket_data completely, you'd fetch them here:
-# Get user from KDC ticket instead of local DB
+    # Get user from KDC ticket instead of local DB
     ticket_data = await validate_ticket_with_kdc(request.service_ticket)
     user = {
-    "name": ticket_data["username"],
-    "role": ticket_data["role"],
-    "department": ticket_data["department"],
-    "clearance": _map_clearance(ticket_data["clearance"]),
-    "location": _map_location(ticket_data.get("location", "internal"))
+        "name": ticket_data["username"],
+        "role": ticket_data["role"],
+        "department": ticket_data["department"],
+        "clearance": _map_clearance(ticket_data["clearance"]),
+        "location": _map_location(ticket_data.get("location", "internal"))
     }
     request_username = user["name"]
 

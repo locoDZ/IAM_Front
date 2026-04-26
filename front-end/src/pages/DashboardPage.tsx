@@ -131,7 +131,7 @@ export default function DashboardPage() {
           <div className="flex items-center gap-4">
             <div className="hidden md:flex flex-col items-end mr-2">
               <span className="text-sm font-semibold">{user.name || "Administrator"}</span>
-              <span className="text-xs text-zinc-500">{user.email || "admin@example.com"}</span>
+
             </div>
             <Button variant="ghost" size="sm" onClick={handleLogout} className="text-zinc-500 hover:text-red-500">
               <LogOut className="w-4 h-4 mr-2" />
@@ -271,38 +271,7 @@ export default function DashboardPage() {
             </div>
           </motion.div>
         )}
-        {/* Quick Stats Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mt-12 bg-zinc-900 rounded-3xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-8"
-        >
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-              <BarChart3 className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="font-bold text-lg">Daily Statistics Overview</h4>
-              <p className="text-white/60 text-sm">Real-time data synchronization across all departments is active.</p>
-            </div>
-          </div>
 
-          <div className="flex gap-8">
-            <div className="text-center">
-              <p className="text-white/40 text-[10px] uppercase tracking-widest font-bold mb-1">System Load</p>
-              <p className="text-2xl font-mono font-bold">14%</p>
-            </div>
-            <div className="text-center">
-              <p className="text-white/40 text-[10px] uppercase tracking-widest font-bold mb-1">Active Users</p>
-              <p className="text-2xl font-mono font-bold">842</p>
-            </div>
-            <div className="text-center">
-              <p className="text-white/40 text-[10px] uppercase tracking-widest font-bold mb-1">API Latency</p>
-              <p className="text-2xl font-mono font-bold">12ms</p>
-            </div>
-          </div>
-        </motion.div>
       </main>
     </div>
   );

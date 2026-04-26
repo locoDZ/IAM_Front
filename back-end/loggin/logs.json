@@ -1790,5 +1790,2732 @@
       "role": "Employee"
     },
     "timestamp": "2026-04-26T04:32:18.804528"
+  },
+  {
+    "id": "e3e4a6b9-1c32-41dc-a037-c896eb06759f",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:33:59.542187"
+  },
+  {
+    "id": "204819e2-240b-46be-aee7-c147a2dea441",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "iAc9FnRCJLz1Q0kQytgZJQ=="
+    },
+    "timestamp": "2026-04-26T04:34:12.941078"
+  },
+  {
+    "id": "3798577c-ca0b-4744-a441-9bf3d360e34d",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T04:34:13.634768"
+  },
+  {
+    "id": "6c96017f-40a1-431d-baf1-9777e26658f5",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "asrep",
+      "username": "carol"
+    },
+    "timestamp": "2026-04-26T04:34:45.535379"
+  },
+  {
+    "id": "e0cc3a24-1365-4249-b689-93ece0ef90f5",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T04:35:00.764740"
+  },
+  {
+    "id": "f7f9ade5-16ee-4033-a73f-2e9a54d010ee",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "replay",
+      "username": null
+    },
+    "timestamp": "2026-04-26T04:35:15.897258"
+  },
+  {
+    "id": "5740536d-b21d-44d3-8568-db9af347e43a",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "tamper",
+      "username": null
+    },
+    "timestamp": "2026-04-26T04:35:41.152323"
+  },
+  {
+    "id": "23e08c17-e69c-497f-a656-6f3579a6ac29",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "tamper",
+      "username": null
+    },
+    "timestamp": "2026-04-26T04:35:53.693453"
+  },
+  {
+    "id": "76bbdc00-9d94-4ac5-a504-6e1b596effc7",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "dcsync",
+      "username": null
+    },
+    "timestamp": "2026-04-26T04:36:07.282791"
+  },
+  {
+    "id": "34718ac1-4ba0-4a3a-aed5-e6dac7ef80d9",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "dcsync",
+      "username": null
+    },
+    "timestamp": "2026-04-26T04:36:21.180915"
+  },
+  {
+    "id": "0392eee9-282a-44a3-a760-01de0e18c72c",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "dcsync",
+      "username": null
+    },
+    "timestamp": "2026-04-26T04:36:28.696263"
+  },
+  {
+    "id": "51bd47cd-4ef3-4de1-86e2-5e3c92f69ae0",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "unauthorized",
+      "username": null
+    },
+    "timestamp": "2026-04-26T04:36:34.895031"
+  },
+  {
+    "id": "9f8f761f-3a05-4025-927f-014084a7b03a",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "loco",
+      "role": "Employee",
+      "department": "HR",
+      "ticket_id": "eX93FXF05eDKXNYXuI1B3g=="
+    },
+    "timestamp": "2026-04-26T08:59:11.449885"
+  },
+  {
+    "id": "b6370860-5787-4b17-abe1-b798352841ba",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T08:59:12.168929"
+  },
+  {
+    "id": "0135277f-f243-465b-b393-d4c9b8bf17eb",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "loco",
+      "service": "hr_service",
+      "ticket_id": "lUScF_iF7CT9l-8FEJx5eA=="
+    },
+    "timestamp": "2026-04-26T08:59:55.640792"
+  },
+  {
+    "id": "4e06b9e9-6e90-42b3-a028-8db91c69f35b",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T08:59:56.336556"
+  },
+  {
+    "id": "35b18e91-7267-435b-8e70-4ce68a8b958e",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "loco",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:00:15.208688"
+  },
+  {
+    "id": "58b62236-2caa-4a4a-8774-0f8e3830f366",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "WlwIxqrpCZW2CJxctIU44w=="
+    },
+    "timestamp": "2026-04-26T09:01:59.042091"
+  },
+  {
+    "id": "670f4cc1-cd33-4c24-aa4a-455190b26a66",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T09:01:59.736075"
+  },
+  {
+    "id": "fa3d10fe-3ec2-4cf8-9ae4-f5d28743b986",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T09:02:20.899704"
+  },
+  {
+    "id": "e072ca3f-a015-433e-b8ba-c84028f7aeda",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T09:03:08.746816"
+  },
+  {
+    "id": "3c3ddce5-9a43-4708-ad2d-6e583335f36e",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "tamper",
+      "username": null
+    },
+    "timestamp": "2026-04-26T09:03:41.326478"
+  },
+  {
+    "id": "a6ac7a12-e1f9-4ea2-bb89-2a8acd03cf57",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "loco",
+      "role": "Employee",
+      "department": "HR",
+      "ticket_id": "ZWpEnhBySCQakwivGYm9YA=="
+    },
+    "timestamp": "2026-04-26T09:04:28.455654"
+  },
+  {
+    "id": "bf1cba24-5f8e-4bed-9108-3fe06fef1d1a",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T09:04:29.160329"
+  },
+  {
+    "id": "d933d1e6-7370-40ae-bdf5-1c828e833581",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "6DDq02kX3bCERBBM9CFjnA=="
+    },
+    "timestamp": "2026-04-26T09:04:56.214295"
+  },
+  {
+    "id": "859c570b-b1d8-4877-8a89-36372d1f5031",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T09:04:56.908491"
+  },
+  {
+    "id": "d2245b94-c2bf-4aa4-83d8-884d24402af2",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "carol",
+      "role": "Employee",
+      "department": "HR",
+      "ticket_id": "FpXWmkWpxZ9vEgE60YaQfw=="
+    },
+    "timestamp": "2026-04-26T09:10:00.582759"
+  },
+  {
+    "id": "9d5508f0-c688-43b6-aaec-20ae3399d102",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "carol"
+    },
+    "timestamp": "2026-04-26T09:10:01.286036"
+  },
+  {
+    "id": "6f3e463f-bdac-4bec-871c-18c004e2b85e",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "ticket_id": "NCjpfa4oydfADV4xlw5XLg=="
+    },
+    "timestamp": "2026-04-26T09:10:04.900469"
+  },
+  {
+    "id": "ce02aca7-97f2-42b1-a0bf-0fd28c08c515",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T09:10:05.594590"
+  },
+  {
+    "id": "70f41b8f-5d3b-4bb2-8b6d-e1e447f55262",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "ticket_id": "8taCKMNo9TkbrhPuH05Vmg=="
+    },
+    "timestamp": "2026-04-26T09:10:06.795669"
+  },
+  {
+    "id": "b0b7a786-75a8-4681-b2f3-2202a4e1dbfd",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T09:10:07.495054"
+  },
+  {
+    "id": "6fd96c42-21aa-46c2-ad06-38d516e18c04",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:10:10.786476"
+  },
+  {
+    "id": "c28c0ebd-fc80-4b45-9f27-1565edfef331",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:10:19.740980"
+  },
+  {
+    "id": "cc698a82-c952-4f05-b2db-8d832e641e61",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T09:10:20.700903"
+  },
+  {
+    "id": "68ecc886-d50a-46f9-902f-7c78a549e544",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:10:25.629361"
+  },
+  {
+    "id": "f224b877-98c0-4714-bf85-71e12084924f",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:10:46.664789"
+  },
+  {
+    "id": "3a377559-2fd7-4062-b993-3bf212645c65",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:10:53.326077"
+  },
+  {
+    "id": "05778f14-3711-4be8-a39f-beb5f2568357",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:10:57.583431"
+  },
+  {
+    "id": "68964631-77c5-40c0-b987-26f2f5abd99a",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "ticket_id": "c9zdXp7IdMpJFNcjziJHcQ=="
+    },
+    "timestamp": "2026-04-26T09:11:11.988446"
+  },
+  {
+    "id": "ee7ee901-24aa-45c9-b033-2f37f2f42738",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T09:11:12.724090"
+  },
+  {
+    "id": "14128eb3-7e07-408a-bb77-c38e137ce644",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:12:06.332272"
+  },
+  {
+    "id": "dc6c4946-9d39-4061-8208-1a5565260ce5",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:12:11.628522"
+  },
+  {
+    "id": "05f3bb72-dc42-4f77-8a7b-ab518ac88e75",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "operations_service",
+      "ticket_id": "MzjQjoAQ7po0mfmy-qPGmg=="
+    },
+    "timestamp": "2026-04-26T09:12:18.887244"
+  },
+  {
+    "id": "db559305-1687-446d-9321-74086e852edf",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T09:12:19.623337"
+  },
+  {
+    "id": "22201416-5472-41d4-bce9-6ca05864e38c",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "operations_service",
+      "ticket_id": "FJYllD2Xo0fEBoNJTRFx6w=="
+    },
+    "timestamp": "2026-04-26T09:12:21.086040"
+  },
+  {
+    "id": "b3ea02b1-1471-4bcc-8268-19fdced3e284",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T09:12:21.788262"
+  },
+  {
+    "id": "d8743b3e-6ea0-4c1d-9de5-8e7631e0b375",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "operations_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:12:24.397674"
+  },
+  {
+    "id": "222055f7-aa1e-4d3f-88d8-da9c6fe2de67",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T09:12:25.504823"
+  },
+  {
+    "id": "7ef9519c-5d16-48d8-9708-6349dccbeb0f",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "operations_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:12:31.148154"
+  },
+  {
+    "id": "4f107a08-e0a4-4e55-b9f4-65db1e40fe88",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "operations_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:12:36.428869"
+  },
+  {
+    "id": "02fc4418-a421-406a-acdd-8937529e770a",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "ticket_id": "U9f_i5vibXEqfK2o9qcbOw=="
+    },
+    "timestamp": "2026-04-26T09:12:51.193186"
+  },
+  {
+    "id": "6b4409b9-e32f-4745-b937-2e9d9d6c9243",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T09:12:51.893848"
+  },
+  {
+    "id": "c637f5d1-fec7-4c76-807b-57540a289830",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "AI4U286ihANfGa-G2Y9rRQ=="
+    },
+    "timestamp": "2026-04-26T09:13:02.633882"
+  },
+  {
+    "id": "4543f9b3-faad-4996-9e8b-170da9606b3b",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T09:13:03.341586"
+  },
+  {
+    "id": "b0cb35ed-0654-4205-9b57-fc2359d699c7",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "ticket_id": "nYBhH1J41e_sQ30JcRN_NA=="
+    },
+    "timestamp": "2026-04-26T09:13:06.323375"
+  },
+  {
+    "id": "f7b4740d-5bba-4d46-b023-0b51be20652d",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T09:13:07.017386"
+  },
+  {
+    "id": "0ed28065-a6a2-4312-a2a9-dc55b2b1d73f",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "ticket_id": "QWZHpXMmsSKm-MCG-BA5bA=="
+    },
+    "timestamp": "2026-04-26T09:13:08.183830"
+  },
+  {
+    "id": "1c8cf69e-4219-422c-94ff-81045733ad59",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T09:13:08.892279"
+  },
+  {
+    "id": "b9399a8b-4709-4929-ab18-753fad8e47ac",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:13:12.382474"
+  },
+  {
+    "id": "5c4bb958-36e9-4d06-b184-0405408edfdc",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "operations_service",
+      "ticket_id": "iP6ySnjnx-0YBOe60npLdQ=="
+    },
+    "timestamp": "2026-04-26T09:15:23.650201"
+  },
+  {
+    "id": "a633c54c-4af5-48c3-a49a-c57f8829ac9d",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T09:15:24.350781"
+  },
+  {
+    "id": "de1fe54e-08a4-497b-9077-aa4f7a8039d9",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "operations_service",
+      "ticket_id": "fC26u-D9nV1NNqWlsSFC0A=="
+    },
+    "timestamp": "2026-04-26T09:15:26.154078"
+  },
+  {
+    "id": "2d6bcd5c-61fc-4fb2-ad4d-cdb11a1ff712",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "operations_service",
+      "ticket_id": "MppSqg-UP9XL1HD4c-YTUg=="
+    },
+    "timestamp": "2026-04-26T09:15:27.002421"
+  },
+  {
+    "id": "87acfc7b-59f2-4208-9a47-53aedc69fd53",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "operations_service",
+      "ticket_id": "Pnty69DUrZu3yJon-vW6-w=="
+    },
+    "timestamp": "2026-04-26T09:15:26.577904"
+  },
+  {
+    "id": "f95f13fc-7bb3-4f71-9124-7a2396407c0a",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T09:15:27.452553"
+  },
+  {
+    "id": "46b6a3f1-a0cc-4630-9d04-b88094e48a63",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T09:15:27.880950"
+  },
+  {
+    "id": "dcc8de15-925b-40d3-a05b-a68e191b4e60",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T09:15:28.314990"
+  },
+  {
+    "id": "aa99e503-eac5-4535-9831-60435ca06495",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "operations_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:15:32.908828"
+  },
+  {
+    "id": "90ccf007-e2f0-417c-8a5a-19f0ee03742b",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T09:15:33.868416"
+  },
+  {
+    "id": "9dd4f993-727e-4b67-8054-c24cf1602247",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "loco",
+      "role": "Employee",
+      "department": "HR",
+      "ticket_id": "f0KvL8yTi1LleYczjSq6iA=="
+    },
+    "timestamp": "2026-04-26T09:15:45.549761"
+  },
+  {
+    "id": "4b22827f-3b9d-4c46-9893-950172e52815",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T09:15:46.247129"
+  },
+  {
+    "id": "c67667c3-d2f5-4be3-b7cb-ea1049ae074a",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "loco",
+      "service": "hr_service",
+      "ticket_id": "iPZ5FCt_oJru7ZnTmLnj-w=="
+    },
+    "timestamp": "2026-04-26T09:15:50.980754"
+  },
+  {
+    "id": "be40c5f6-7f10-4278-9259-3c11f902b8f2",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T09:15:51.703851"
+  },
+  {
+    "id": "46a248d7-8126-49e0-94ee-877b9a632472",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "loco",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:15:55.348544"
+  },
+  {
+    "id": "9c788d75-2c09-4146-b6be-0e1ab636bef6",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "loco",
+      "service": "finance_service",
+      "ticket_id": "S2sUIWcQq7-pQhZ1xIMXTw=="
+    },
+    "timestamp": "2026-04-26T09:16:01.417419"
+  },
+  {
+    "id": "c4e059e9-943b-4a66-8b84-4a7023dd60d8",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T09:16:02.114752"
+  },
+  {
+    "id": "1dc340ef-5ad8-4790-be6f-da6d254bedfe",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "loco",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:16:06.161047"
+  },
+  {
+    "id": "9803e969-83f8-4b77-ac0a-dcc2952dc8d5",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "loco",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T09:16:10.350001"
+  },
+  {
+    "id": "922a32fc-f67b-4909-8bb0-4679647ca80b",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T09:16:11.363643"
+  },
+  {
+    "id": "420370de-8baa-4719-86af-98e9cabf3d3e",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "barGi1k1TX0t6sj2grtaNA=="
+    },
+    "timestamp": "2026-04-26T09:22:07.121188"
+  },
+  {
+    "id": "9bd3242d-0ee2-4dbf-9686-a25067f31a87",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T09:22:07.840271"
+  },
+  {
+    "id": "9b01cd6f-294a-4179-afa7-655a30d4ba44",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "finance_service",
+      "ticket_id": "PKNVNDydTuEs9KAWA-RWzg=="
+    },
+    "timestamp": "2026-04-26T09:22:11.323974"
+  },
+  {
+    "id": "b4609f49-b8d3-4c36-90fe-e4f7972b5be5",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T09:22:12.029139"
+  },
+  {
+    "id": "3f73e40e-ea8e-40ee-af27-6b9fd9e2d639",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "finance_service",
+      "ticket_id": "1Cx_tOV80LNGsV6iDAvuxA=="
+    },
+    "timestamp": "2026-04-26T09:22:13.393723"
+  },
+  {
+    "id": "d7cc7df3-a9d2-4dfa-ad01-0ef86a675b9b",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T09:22:14.086516"
+  },
+  {
+    "id": "af65f5bc-b187-4816-b3e0-fb2406777e79",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "finance_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:22:16.916657"
+  },
+  {
+    "id": "5336900a-7b8f-43d3-8cdb-b06e65eceae0",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "finance_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:22:24.467682"
+  },
+  {
+    "id": "84b3608d-fa91-46e4-b7de-f798ee3f0de5",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "finance_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:23:02.396091"
+  },
+  {
+    "id": "4accf0ed-d4d1-4f10-8c0a-f6bb07249676",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "finance_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:25:22.901963"
+  },
+  {
+    "id": "d801fda5-0d7b-4323-a6ac-fc314fccd60f",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "finance_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:26:04.463753"
+  },
+  {
+    "id": "aeb5b94b-1a44-451f-9f34-6de506f97d10",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "finance_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:26:11.599130"
+  },
+  {
+    "id": "01d9e819-a8c2-45e8-bc68-81ced8c91673",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T09:26:12.564825"
+  },
+  {
+    "id": "96864c39-9925-47fa-83da-f75cbb0ed759",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T09:30:02.570548"
+  },
+  {
+    "id": "2a677a7c-137f-413d-b368-e0fa2341bf6e",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "replay",
+      "username": null
+    },
+    "timestamp": "2026-04-26T09:30:25.495192"
+  },
+  {
+    "id": "211bc617-3862-4829-8b5b-359ab65ca4af",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "ticket_id": "9tMb62vqXUL--8V3nFIN7Q=="
+    },
+    "timestamp": "2026-04-26T09:36:57.894724"
+  },
+  {
+    "id": "94dcff29-26a5-4d7c-8df7-24439e4129f9",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T09:36:58.595100"
+  },
+  {
+    "id": "e242b25f-63a1-4157-9bf2-cf8dcde4e9b1",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "ticket_id": "0QMnZom8Kaz3fIGhgPLPPg=="
+    },
+    "timestamp": "2026-04-26T09:37:00.183283"
+  },
+  {
+    "id": "9cc64800-daed-4744-9aa0-c5ac9f944889",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "ticket_id": "H6QDGpirU2dODG0sfjNh4A=="
+    },
+    "timestamp": "2026-04-26T09:37:00.611160"
+  },
+  {
+    "id": "14091429-b82c-4916-8d63-26a7b6a90fc6",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T09:37:01.328527"
+  },
+  {
+    "id": "3f6f4fdc-16ab-4bac-88f0-7ef19dc85c19",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T09:37:01.769929"
+  },
+  {
+    "id": "e0ce8699-b01f-4486-8fbe-abd76eb5e283",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:37:06.254108"
+  },
+  {
+    "id": "8082f9a4-c9b0-40a0-b306-2ce8af5d2d5d",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:38:11.576133"
+  },
+  {
+    "id": "b319abf8-82b4-4a53-8843-c651bf10222e",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T09:38:12.560189"
+  },
+  {
+    "id": "89ef3afc-6a56-4ba9-9891-cee7e62deb55",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:38:20.171017"
+  },
+  {
+    "id": "d2a2b23e-c3fa-40a3-83a6-46ca82155c44",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T09:38:21.139214"
+  },
+  {
+    "id": "da8a791e-fb4e-49b4-862a-c8931ca1a20b",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:38:38.738356"
+  },
+  {
+    "id": "8f660c16-36d5-4cae-9b49-f24dd6e36f06",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T09:38:39.724290"
+  },
+  {
+    "id": "7d1db52f-3e3b-4efd-9cf3-c399f02ead7c",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:38:58.141078"
+  },
+  {
+    "id": "e9eb71cf-f1f6-44ec-954f-c8c922cca41c",
+    "service": "Gateway",
+    "event_type": "RESOURCE_DELETE",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T09:38:59.103809"
+  },
+  {
+    "id": "3809efc6-6500-4e1a-9869-c8909ab3e372",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "IrUbJ5S-D5O54CFTJnw1dw=="
+    },
+    "timestamp": "2026-04-26T09:40:23.320011"
+  },
+  {
+    "id": "e1bd4438-5b5c-4e88-bb42-798cd7e49aa3",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T09:40:24.020822"
+  },
+  {
+    "id": "a9d7a80e-75a3-4b1e-9d8c-2b1620af0d09",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "string",
+      "ticket_id": "h5oe6BjBQCIzmYWemeXAdw=="
+    },
+    "timestamp": "2026-04-26T09:41:06.291875"
+  },
+  {
+    "id": "63279ae6-122c-4fb9-8203-4c8583da36fa",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "string"
+    },
+    "timestamp": "2026-04-26T09:41:06.993528"
+  },
+  {
+    "id": "c1d15f64-fb6c-4d3e-8d4d-17127d991858",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "string",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:42:23.875684"
+  },
+  {
+    "id": "c5ab6d9a-8b2b-40a8-9328-b74a8a19ba9f",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "string",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:43:52.415649"
+  },
+  {
+    "id": "9d4adab9-cbca-4518-8280-4d0ff11232aa",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "string",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:44:07.734849"
+  },
+  {
+    "id": "9c34366b-4d42-4ebc-badd-ced46284fd23",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "string",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:44:39.616468"
+  },
+  {
+    "id": "b7484253-d2c1-4085-b249-a0fb90818158",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "financial_reports"
+    },
+    "timestamp": "2026-04-26T09:44:40.593003"
+  },
+  {
+    "id": "626855db-3b7c-4b7a-afe6-0b095799e5d0",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:45:00.716464"
+  },
+  {
+    "id": "0b020b4b-7fc8-40c4-987d-aa4081083ead",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T09:45:01.693885"
+  },
+  {
+    "id": "5e03e909-a1b2-420c-a2b5-60569547f5a9",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:55:12.945173"
+  },
+  {
+    "id": "e4b835c4-35e3-4834-b116-233d447e1e76",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T09:55:13.947011"
+  },
+  {
+    "id": "7a350da7-ddca-4422-9b02-4a9cec99233d",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:55:21.443600"
+  },
+  {
+    "id": "a5255aa8-eba3-484b-abff-f7fec3b917f0",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T09:55:22.439901"
+  },
+  {
+    "id": "87d7f7d4-56b7-4150-a83b-7fe5b4c2a7af",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:55:31.457952"
+  },
+  {
+    "id": "1b6c841f-efc5-4ce6-9249-9605ea262f1f",
+    "service": "Gateway",
+    "event_type": "RESOURCE_DELETE",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T09:55:32.503229"
+  },
+  {
+    "id": "cc0d3a2a-964a-4e8d-9ef6-9d701ff5ad95",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:55:59.218089"
+  },
+  {
+    "id": "39b9ac4c-dd3e-488b-8c31-c2b279a1e012",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "operations_service",
+      "ticket_id": "2QVzpOsmenic810Rkf6jqg=="
+    },
+    "timestamp": "2026-04-26T09:56:46.569577"
+  },
+  {
+    "id": "1772ea0c-6c80-4231-b57c-19dcee68738c",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T09:56:47.288994"
+  },
+  {
+    "id": "f0b92b94-7d0e-4150-836e-2d9e2710c0c4",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "operations_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:56:55.880087"
+  },
+  {
+    "id": "8ad0d971-ee4b-4dd2-ba20-d7f35b5649e3",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "operations_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:57:20.677185"
+  },
+  {
+    "id": "48f19253-3180-486f-87f8-b5511663d820",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "operations_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:58:29.253893"
+  },
+  {
+    "id": "703c4894-c71e-4948-b74b-6948e805a748",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T09:58:30.228083"
+  },
+  {
+    "id": "64743117-8403-4d07-aa22-472840c4f702",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "operations_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T09:58:34.701293"
+  },
+  {
+    "id": "c27b5e42-2634-489c-8f77-098750cee41a",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T09:58:35.682444"
+  },
+  {
+    "id": "ffa44e0e-7593-425a-9fb7-e617b9839877",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "pzITkVpMnGlbsf6NCs9muA=="
+    },
+    "timestamp": "2026-04-26T09:59:07.976613"
+  },
+  {
+    "id": "43979797-9af1-48f8-95e7-0805e555c131",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T09:59:08.703298"
+  },
+  {
+    "id": "501ccf04-2c9f-4eb6-a83f-696075dc4e0a",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "loco",
+      "role": "Employee",
+      "department": "HR",
+      "ticket_id": "xVJgS6GWS42sEa4WS2nIjA=="
+    },
+    "timestamp": "2026-04-26T09:59:46.058521"
+  },
+  {
+    "id": "95bf1085-7e7f-4c5c-9b2a-e1f9933834b5",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T09:59:46.763474"
+  },
+  {
+    "id": "be4a1085-027f-4feb-82e8-310394961a5e",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "2lTOYNdRqIkRZjNBw4ZNNA=="
+    },
+    "timestamp": "2026-04-26T09:59:55.970848"
+  },
+  {
+    "id": "f76e956c-c37a-48dc-8271-cd5d3014ec4a",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T09:59:56.684882"
+  },
+  {
+    "id": "32248d5c-d9b1-489a-b3b9-bdd523b95643",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T10:00:12.581694"
+  },
+  {
+    "id": "33e98f41-c8fe-4ea1-80bf-5ba99b6f00b9",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "tamper",
+      "username": null
+    },
+    "timestamp": "2026-04-26T10:00:44.254427"
+  },
+  {
+    "id": "7b19d618-62ce-4058-bacc-b1e9301718df",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "loco",
+      "role": "Employee",
+      "department": "HR",
+      "ticket_id": "nLAgTHWrIvfCYowBoyGuHw=="
+    },
+    "timestamp": "2026-04-26T10:01:20.825933"
+  },
+  {
+    "id": "215a5abd-a8aa-4c1a-94a2-0424390498a7",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T10:01:21.531377"
+  },
+  {
+    "id": "0c98ceb9-abef-466e-bed7-93ad4c2f5442",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "81d-dbGUo6ZuEH7ROG-O8w=="
+    },
+    "timestamp": "2026-04-26T10:02:37.612954"
+  },
+  {
+    "id": "df2a02b8-538e-41d1-b264-687265071cd0",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T10:02:38.319591"
+  },
+  {
+    "id": "6ebcaacc-1df4-47fa-ae06-988e9d830ec6",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "dcsync",
+      "username": null
+    },
+    "timestamp": "2026-04-26T10:03:00.033164"
+  },
+  {
+    "id": "6302c2f7-d527-4b76-b429-06739be0bd38",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "dcsync",
+      "username": null
+    },
+    "timestamp": "2026-04-26T10:03:14.546855"
+  },
+  {
+    "id": "d96f494f-baba-47c0-a677-3b37befb33ef",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "silver",
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T10:05:08.008620"
+  },
+  {
+    "id": "f6233785-add1-4775-8d53-026a8c9df8c5",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "silver",
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T10:05:23.586298"
+  },
+  {
+    "id": "ed9d1a9a-f8a6-46ae-95c6-cebe5bc04091",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T10:07:08.905966"
+  },
+  {
+    "id": "ff181421-bbce-4f86-88f6-c7a1a5217901",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "loco",
+      "role": "Employee",
+      "department": "HR",
+      "ticket_id": "rBuBVhoUEkLaO3oPQ_QsKQ=="
+    },
+    "timestamp": "2026-04-26T10:18:31.806071"
+  },
+  {
+    "id": "6994854f-d399-49a3-ad16-b9f8f8011b47",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T10:18:32.525282"
+  },
+  {
+    "id": "bd7bc883-46c4-4e58-a9ce-671fa8f8e233",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "loco",
+      "service": "finance_service",
+      "ticket_id": "zQ0do8-THhEshGjBZqvXBg=="
+    },
+    "timestamp": "2026-04-26T10:18:35.614817"
+  },
+  {
+    "id": "2ff54b55-f5c0-4248-9635-9bfde98f5096",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T10:18:36.556219"
+  },
+  {
+    "id": "43395f55-9d1b-49a2-9fb1-032e7a3ceba1",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "loco",
+      "service": "finance_service",
+      "ticket_id": "Fm1InMfNvDyfz6LF4kxErQ=="
+    },
+    "timestamp": "2026-04-26T10:18:37.517431"
+  },
+  {
+    "id": "a7b97d4f-b843-479d-ab00-bf11313f9cb0",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "loco",
+      "service": "finance_service",
+      "ticket_id": "P4XQ16rsiNIhse7EQHDbZg=="
+    },
+    "timestamp": "2026-04-26T10:18:38.032295"
+  },
+  {
+    "id": "f5767cee-99ad-48a4-96d8-3f5cbd9c4132",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "loco",
+      "service": "finance_service",
+      "ticket_id": "EOO_9lSXzMe8tYwqnRvDLQ=="
+    },
+    "timestamp": "2026-04-26T10:18:38.563035"
+  },
+  {
+    "id": "0d39c0d5-54c0-4e8a-a31d-038095339c34",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T10:18:39.029007"
+  },
+  {
+    "id": "ea7796fb-f50d-43d8-ad5c-4f344136a3fc",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T10:18:39.514661"
+  },
+  {
+    "id": "d2ba86a9-2c28-45f8-bffd-fdef9e53e6ba",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T10:18:39.964572"
+  },
+  {
+    "id": "7d4420ac-a352-4bf4-81dc-49fb3ce6727b",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "loco",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T10:18:42.839530"
+  },
+  {
+    "id": "b7f34bcd-0bfe-4d5c-87ec-06ecc0ff78ba",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "efLdEDUnCEDO3KRjTjaRxQ=="
+    },
+    "timestamp": "2026-04-26T10:18:59.102216"
+  },
+  {
+    "id": "7fc839e6-1f80-4274-9686-f278f6fed16b",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T10:18:59.852213"
+  },
+  {
+    "id": "672f4aec-d7e8-4186-9139-a40e25b81a04",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "it_service",
+      "ticket_id": "Oj2M8wgiOWW1qDCLllo1kQ=="
+    },
+    "timestamp": "2026-04-26T10:19:03.092908"
+  },
+  {
+    "id": "a6940ff7-e68c-4bc2-80a6-eaa8ad5175d9",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "it_service"
+    },
+    "timestamp": "2026-04-26T10:19:03.826806"
+  },
+  {
+    "id": "30e527bf-1537-44d0-a3f0-280b2681fbdc",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "it_service",
+      "ticket_id": "jYnvVyodFcUllhqwoi3RVQ=="
+    },
+    "timestamp": "2026-04-26T10:19:05.009288"
+  },
+  {
+    "id": "e1df6d60-ae53-4977-8fcf-3fcd2624623d",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "it_service"
+    },
+    "timestamp": "2026-04-26T10:19:05.743074"
+  },
+  {
+    "id": "82dbe538-52e6-4b83-881c-a82320c4e961",
+    "service": "KDC",
+    "event_type": "USER_CREATED",
+    "details": {
+      "username": "Locodz",
+      "role": "Admin",
+      "department": "IT"
+    },
+    "timestamp": "2026-04-26T10:21:07.339529"
+  },
+  {
+    "id": "c11ab21b-9551-446d-a8b9-d668fcc5742d",
+    "service": "KDC",
+    "event_type": "USER_DELETED",
+    "details": {
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T10:21:24.779617"
+  },
+  {
+    "id": "d12e7390-048e-4a0d-a3b4-bd49e76b8296",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "Locodz",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "aGwEwjGewk0DhFc3iiJYyw=="
+    },
+    "timestamp": "2026-04-26T10:21:43.343839"
+  },
+  {
+    "id": "67708a8c-eacd-47a9-9280-0e087036df9c",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "Locodz"
+    },
+    "timestamp": "2026-04-26T10:21:44.074202"
+  },
+  {
+    "id": "afd9e01a-3fdd-47dc-8c3b-898ce6d3f5e9",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "it_service",
+      "ticket_id": "P_2GsTvwUIrPaVcywSk7ig=="
+    },
+    "timestamp": "2026-04-26T10:22:24.781397"
+  },
+  {
+    "id": "688d6e82-a7a8-4d13-a070-47d9298a0dce",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "it_service"
+    },
+    "timestamp": "2026-04-26T10:22:25.495965"
+  },
+  {
+    "id": "1830bab2-56c0-4a19-9ea9-7daf4c9b357a",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "it_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:22:35.779005"
+  },
+  {
+    "id": "e6881c2e-5022-4070-9887-1fb3a1b6f473",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "system_logs"
+    },
+    "timestamp": "2026-04-26T10:22:36.755070"
+  },
+  {
+    "id": "3c0b61b5-5aaf-437b-9656-f67dc0cb0ad8",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "it_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:22:41.224542"
+  },
+  {
+    "id": "3053ecfe-a9ad-4497-8281-b34b22ce49b5",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "system_logs"
+    },
+    "timestamp": "2026-04-26T10:22:42.252583"
+  },
+  {
+    "id": "0c85631d-1f77-45f4-a179-5c28708f999d",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "it_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:23:34.492502"
+  },
+  {
+    "id": "aad6fe03-7329-49b5-b301-732bea85befc",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "system_logs"
+    },
+    "timestamp": "2026-04-26T10:23:35.469764"
+  },
+  {
+    "id": "a0eaf343-5a04-4d34-8c90-4eb9d9178393",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "it_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:23:39.320332"
+  },
+  {
+    "id": "eab9272f-3cb8-4701-81ed-f039c6490098",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "system_logs"
+    },
+    "timestamp": "2026-04-26T10:23:40.334534"
+  },
+  {
+    "id": "bb910258-0a42-4b4b-8507-37cd468dd5fc",
+    "service": "KDC",
+    "event_type": "USER_CREATED",
+    "details": {
+      "username": "finance",
+      "role": "Manager",
+      "department": "Finance"
+    },
+    "timestamp": "2026-04-26T10:24:02.586051"
+  },
+  {
+    "id": "38df8214-5506-4a00-813c-b4d7d1b5f716",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "finance",
+      "role": "Manager",
+      "department": "Finance",
+      "ticket_id": "VlxEeX1UKeznoJO9JkyV-g=="
+    },
+    "timestamp": "2026-04-26T10:24:21.618851"
+  },
+  {
+    "id": "8731595c-353e-4279-b08c-4414e50a4e02",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "finance"
+    },
+    "timestamp": "2026-04-26T10:24:22.343150"
+  },
+  {
+    "id": "a715804d-ea76-4e09-94a5-5d83c105b153",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "Locodz"
+    },
+    "timestamp": "2026-04-26T10:26:39.445813"
+  },
+  {
+    "id": "38043371-c95c-4da1-9f0b-89363c30a915",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "finance"
+    },
+    "timestamp": "2026-04-26T10:26:50.636482"
+  },
+  {
+    "id": "ac537527-2eda-4fbf-a56f-ea76f7d88425",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T10:26:59.747146"
+  },
+  {
+    "id": "f220693f-e3f4-479f-a2f7-53336ae5bcaf",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "tamper",
+      "username": null
+    },
+    "timestamp": "2026-04-26T10:27:33.495989"
+  },
+  {
+    "id": "2ff3ca43-cdda-4f0f-825b-f71517bd590f",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "finance",
+      "service": "finance_service",
+      "ticket_id": "z7mIzDt1kSqlneZAooJhSQ=="
+    },
+    "timestamp": "2026-04-26T10:31:31.318430"
+  },
+  {
+    "id": "cd203ab0-9c5d-4b96-9f8c-8cddf6380b3b",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T10:31:32.299001"
+  },
+  {
+    "id": "e86e69d2-d5f2-4a7d-9c3b-20d3cb337794",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "finance",
+      "service": "finance_service",
+      "ticket_id": "eZAuKegQhYOKSviJ2_056A=="
+    },
+    "timestamp": "2026-04-26T10:31:33.237462"
+  },
+  {
+    "id": "8e1b6cf0-0b45-4884-a647-3eba02935cc3",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "finance",
+      "service": "finance_service",
+      "ticket_id": "frxjY5KedGI0Sadjvn05Yw=="
+    },
+    "timestamp": "2026-04-26T10:31:33.677418"
+  },
+  {
+    "id": "10095f56-7c73-43d1-9ae9-9f0ecff3ff2c",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T10:31:34.403545"
+  },
+  {
+    "id": "6a205746-b25c-4a2e-ab8c-680996f2fbf7",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T10:31:34.841206"
+  },
+  {
+    "id": "55d16a39-f3e5-4660-bfe8-0fd9b7f86f5a",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "finance",
+      "service": "finance_service",
+      "role": "Manager"
+    },
+    "timestamp": "2026-04-26T10:31:38.189104"
+  },
+  {
+    "id": "5eb4f398-6e6e-4a81-be9e-3139534fdcca",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "finance",
+      "service": "finance_service",
+      "role": "Manager"
+    },
+    "timestamp": "2026-04-26T10:31:43.447185"
+  },
+  {
+    "id": "e110bafa-c080-47bf-9713-ae49b739c467",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T10:31:44.452139"
+  },
+  {
+    "id": "c464f351-dac8-49aa-8045-42773c22408d",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "0l8FHxB6T2-syKlYmTMXvQ=="
+    },
+    "timestamp": "2026-04-26T10:32:12.584043"
+  },
+  {
+    "id": "db69eb12-c2f3-4dae-b215-ed0c5728df46",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T10:32:13.353805"
+  },
+  {
+    "id": "99979193-1782-4ae8-a7ba-bdb00fc5a094",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "operations_service",
+      "ticket_id": "JP_mFNmZuz6JTVD5CMPVsA=="
+    },
+    "timestamp": "2026-04-26T10:32:18.119407"
+  },
+  {
+    "id": "a08eca4b-c040-46bd-bcd9-528e92cd1c22",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T10:32:18.862369"
+  },
+  {
+    "id": "667f8068-fa97-4a80-898c-3e47f4105696",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "finance_service",
+      "ticket_id": "pHJZW9bFoc7AZm6LrJQ5uQ=="
+    },
+    "timestamp": "2026-04-26T10:32:31.687356"
+  },
+  {
+    "id": "b687d3d4-05a3-4402-9a5a-9d08849a9cac",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T10:32:32.406175"
+  },
+  {
+    "id": "5c793f68-7c00-40ce-8209-e406a54e45af",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "finance_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:32:49.934383"
+  },
+  {
+    "id": "5a5235e8-990d-438f-b213-39361c3e5480",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "financial_reports"
+    },
+    "timestamp": "2026-04-26T10:32:50.966180"
+  },
+  {
+    "id": "ce87d610-a08d-4eb7-a917-5a1cb528bfc8",
+    "service": "KDC",
+    "event_type": "LOGIN_FAILED",
+    "details": {
+      "username": "loco",
+      "reason": "Invalid credentials"
+    },
+    "timestamp": "2026-04-26T10:44:05.585820"
+  },
+  {
+    "id": "4fd9a901-3e54-48d1-b982-b1fc9a0b00a1",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "l3UKhpuNBE_T-fsIwAZXag=="
+    },
+    "timestamp": "2026-04-26T10:49:48.573180"
+  },
+  {
+    "id": "315f4ccf-001a-4820-ad36-0d16a306bb3b",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T10:49:49.293138"
+  },
+  {
+    "id": "8015fc6d-74e6-4f18-8ed5-845c78c23f86",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "ticket_id": "EvQ08Q0TfrwVlki5gBmoJA=="
+    },
+    "timestamp": "2026-04-26T10:50:16.117124"
+  },
+  {
+    "id": "4bbaf854-836e-48aa-a9f8-1378a60b71af",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T10:50:16.815649"
+  },
+  {
+    "id": "2d9a11c3-2bb8-4d0d-9f73-ddccc07c40dc",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:50:29.426434"
+  },
+  {
+    "id": "a45dc21e-125e-4b33-a502-b366a7d22039",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:50:35.987799"
+  },
+  {
+    "id": "06f4a0e1-f145-429f-824c-790fe3a03f8e",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:51:30.887632"
+  },
+  {
+    "id": "26da8b6b-73e8-4313-bbed-3b1e22d28e12",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T10:51:31.882273"
+  },
+  {
+    "id": "0717af81-ae48-40b5-91e6-42e98ddda809",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:51:37.957936"
+  },
+  {
+    "id": "f7bced67-7da7-49fd-b98d-11fb72f687d1",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T10:51:38.962241"
+  },
+  {
+    "id": "4e0ebaf8-ae30-4443-a81f-a66f1e82995f",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:51:40.850615"
+  },
+  {
+    "id": "7a0601fb-2d1a-422b-91be-345ab15b5fa0",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T10:51:41.879464"
+  },
+  {
+    "id": "9a572950-7be4-4948-8c9b-6bc4a6b23760",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:51:46.369205"
+  },
+  {
+    "id": "276f5bc8-38a2-4096-b817-f390427d3905",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T10:51:47.351393"
+  },
+  {
+    "id": "224d578f-77ed-41b3-b8f8-9525febf65d1",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "LXG3zPduYn5nwqQfd2HvqQ=="
+    },
+    "timestamp": "2026-04-26T10:54:33.480444"
+  },
+  {
+    "id": "3f65d47b-fbf5-4fb5-9d12-36c06bef1b63",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T10:54:34.212249"
+  },
+  {
+    "id": "faf6849d-08f7-4741-9d1f-8c0f0f6750b8",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "ticket_id": "kQkHj9ak_mVFpz5uZTSczQ=="
+    },
+    "timestamp": "2026-04-26T10:54:47.553907"
+  },
+  {
+    "id": "99c23737-4b78-4636-a6eb-ad2de9b974c1",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T10:54:48.273570"
+  },
+  {
+    "id": "28e45e1b-6049-4960-bc04-9143ed39304d",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "ticket_id": "C358vF8wGkWR3A4djoKFvw=="
+    },
+    "timestamp": "2026-04-26T10:54:49.479373"
+  },
+  {
+    "id": "9cc3ebc6-7a1e-4ad0-a641-bf46a869c80d",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T10:54:50.214208"
+  },
+  {
+    "id": "d6f75dd0-2943-4d8f-93fd-eb8ea4478c75",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:54:52.788927"
+  },
+  {
+    "id": "f9e8ecad-ca0d-4e1f-b732-90a0c955afda",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T10:54:53.802263"
+  },
+  {
+    "id": "13cab545-19d7-4fa2-8fbe-c8420c5eef7a",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:55:07.400943"
+  },
+  {
+    "id": "e7fa690d-c705-4caf-a4a0-8d25256c2d42",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T10:55:08.393926"
+  },
+  {
+    "id": "456d729c-1bec-4a12-b86f-7905dca118ae",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:55:12.064126"
+  },
+  {
+    "id": "273ab65b-605e-4608-8efa-0b01bd901fad",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T10:55:13.064676"
+  },
+  {
+    "id": "775a5cce-8e74-44a5-8dc2-2b405e0bd5ff",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "alice",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T10:55:20.160158"
+  },
+  {
+    "id": "141d0863-80fa-4183-82f1-51b67c23b5e6",
+    "service": "Gateway",
+    "event_type": "RESOURCE_DELETE",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T10:55:21.269261"
+  },
+  {
+    "id": "0272f8f8-751a-4cc9-894e-f0b504fb826a",
+    "service": "KDC",
+    "event_type": "USER_CREATED",
+    "details": {
+      "username": "ri",
+      "role": "Manager",
+      "department": "Finance"
+    },
+    "timestamp": "2026-04-26T10:55:44.986980"
+  },
+  {
+    "id": "92295232-42e8-4e2f-ac23-7480567157e9",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "ri",
+      "role": "Manager",
+      "department": "Finance",
+      "ticket_id": "hMw35W-hk2iqUojXgIEAtA=="
+    },
+    "timestamp": "2026-04-26T10:56:04.012475"
+  },
+  {
+    "id": "3f4ff32f-55e7-4e13-997d-de97ad6953af",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "ri"
+    },
+    "timestamp": "2026-04-26T10:56:04.741396"
+  },
+  {
+    "id": "58244f91-99c4-4a1f-919f-2a857f1257ae",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "ri",
+      "service": "operations_service",
+      "ticket_id": "iTvwnYW8s3yc79kGk_vn0g=="
+    },
+    "timestamp": "2026-04-26T10:56:20.036651"
+  },
+  {
+    "id": "dbebc288-3b26-4db1-9476-972428b09440",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "ri",
+      "service": "operations_service",
+      "ticket_id": "9fFfGts5y7Ft4y8dMnubNw=="
+    },
+    "timestamp": "2026-04-26T10:56:20.459848"
+  },
+  {
+    "id": "83dd582d-a781-4357-945f-8490288cdc76",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T10:56:21.222952"
+  },
+  {
+    "id": "0462b616-c4c5-4179-a3a6-5db252f17baf",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T10:56:21.648988"
+  },
+  {
+    "id": "935684e3-794d-480a-93ba-28dace2784e8",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "ri",
+      "service": "operations_service",
+      "ticket_id": "VdqzHs1f7tTnjZJ1xe5DoQ=="
+    },
+    "timestamp": "2026-04-26T10:56:24.056238"
+  },
+  {
+    "id": "b3d10d7b-bd31-4f8c-b31e-e5169579a6dc",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "ri",
+      "service": "operations_service",
+      "ticket_id": "YAgP9924tD_7YHw3Pj6Tug=="
+    },
+    "timestamp": "2026-04-26T10:56:24.512234"
+  },
+  {
+    "id": "b4dc7b0c-ed8d-47da-8863-e86c162dc34b",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "ri",
+      "service": "operations_service",
+      "ticket_id": "TXmyEf5yWtMY0XKMNAS_Jg=="
+    },
+    "timestamp": "2026-04-26T10:56:25.815447"
+  },
+  {
+    "id": "0ca1492f-76bb-4934-9195-73faadb6de1a",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "ri",
+      "service": "operations_service",
+      "ticket_id": "Ea7w4aXUXhbU-sUNDrd27Q=="
+    },
+    "timestamp": "2026-04-26T10:56:24.953517"
+  },
+  {
+    "id": "5968cd1a-ff5f-4901-985d-9c19452c4aa0",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "ri",
+      "service": "operations_service",
+      "ticket_id": "tnAVABQIySiYLMLicseubw=="
+    },
+    "timestamp": "2026-04-26T10:56:25.382989"
+  },
+  {
+    "id": "837ea849-ee89-4bed-98b6-94b27573eeab",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T10:56:26.271079"
+  },
+  {
+    "id": "56aab044-0857-4af5-ac4c-2579c9d4d3f4",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T10:56:26.706583"
+  },
+  {
+    "id": "e880e314-4c2d-422c-8ab6-b8d07422927c",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T10:56:27.178559"
+  },
+  {
+    "id": "53a883d8-06c5-421c-ad3e-354a72965685",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T10:56:27.615144"
+  },
+  {
+    "id": "c2f5a4ff-424c-412d-af3f-405dc10a61ec",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T10:56:28.049954"
+  },
+  {
+    "id": "f109c219-6d96-4b39-9f00-b25b69950708",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "ri",
+      "service": "operations_service",
+      "role": "Manager"
+    },
+    "timestamp": "2026-04-26T10:56:33.763354"
+  },
+  {
+    "id": "6d31f774-d221-4866-9b28-0f11939dfedb",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "ri",
+      "service": "operations_service",
+      "role": "Manager"
+    },
+    "timestamp": "2026-04-26T10:56:42.413844"
+  },
+  {
+    "id": "4fb56d6c-f476-4053-84ad-63186991efee",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T10:56:43.415298"
+  },
+  {
+    "id": "b8d3475d-b0f2-4f90-9b54-488725c6f55b",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "ri",
+      "service": "it_service",
+      "ticket_id": "beWrTMNoTftTUEsa90rhZg=="
+    },
+    "timestamp": "2026-04-26T10:56:48.313356"
+  },
+  {
+    "id": "da56325e-eb10-4f94-bf39-a99caf063f82",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "it_service"
+    },
+    "timestamp": "2026-04-26T10:56:49.015351"
+  },
+  {
+    "id": "a21eb05a-63ab-47a1-bef4-f934bba19b8e",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "ri",
+      "service": "it_service",
+      "ticket_id": "qvSgrAQSiT6Ue7LLp3qPKQ=="
+    },
+    "timestamp": "2026-04-26T10:56:50.342336"
+  },
+  {
+    "id": "0064c4a9-c338-48d8-8c63-6cdbb2f3bd9c",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "it_service"
+    },
+    "timestamp": "2026-04-26T10:56:51.059081"
+  },
+  {
+    "id": "b85eed1c-9d5f-440b-bc6a-89c81c265b1b",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "ri",
+      "service": "it_service",
+      "ticket_id": "yrf5aeweycYDHOjsw1ehaQ=="
+    },
+    "timestamp": "2026-04-26T10:56:51.508729"
+  },
+  {
+    "id": "c74372d9-0343-4435-b7af-b0aed6c97f1e",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "it_service"
+    },
+    "timestamp": "2026-04-26T10:56:52.236618"
+  },
+  {
+    "id": "bc9e76bd-027a-4654-8e1a-e19c02ac2c67",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "ri",
+      "service": "it_service",
+      "role": "Manager"
+    },
+    "timestamp": "2026-04-26T10:56:55.315345"
+  },
+  {
+    "id": "72185092-a26f-40fb-abca-6137753ffb91",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T10:57:28.898668"
+  },
+  {
+    "id": "914ac177-4172-4e93-a3ef-d5700723a62f",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "ri"
+    },
+    "timestamp": "2026-04-26T10:58:13.121795"
+  },
+  {
+    "id": "d11ac590-be7e-4b0a-9a00-9e8357a8e47b",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T10:58:47.835019"
   }
 ]

@@ -45,13 +45,14 @@ export default function DepartmentPage() {
   const user = JSON.parse(sessionStorage.getItem("user") || "{}");
   const serviceTicket = sessionStorage.getItem("service_ticket") || "";
 
+  const [writeContent, setWriteContent] = useState<Record<string, string>>({});
   const [results, setResults] = useState<Record<string, ActionResult | null>>({});
   const [loading, setLoading] = useState<Record<string, boolean>>({});
   const [activeResource, setActiveResource] = useState<string | null>(null);
 
   const resources = DEPARTMENT_RESOURCES[id || ""] || [];
 
-  const performAction = async (resourceName: string, action: "Read" | "Write" | "Delete") => {
+  const performAction = async (resourceName: string, action: "Read" | "Write" | "Delete", customContent?: string) => {
     const key = `${resourceName}-${action}`;
     setLoading(prev => ({ ...prev, [key]: true }));
     setResults(prev => ({ ...prev, [key]: null }));
@@ -66,7 +67,9 @@ export default function DepartmentPage() {
         name: resourceName,
         action,
       };
-      if (action === "Write") body.content = `Updated by ${user.username} at ${new Date().toISOString()}`;
+      if (action === "Write") {
+        body.content = customContent || `Updated by ${user.username} at ${new Date().toISOString()}`;
+      }
 
       const resp = await fetch(`http://localhost:8000${endpoint}`, {
         method: "POST",
@@ -192,40 +195,78 @@ export default function DepartmentPage() {
                   const isLoading = loading[key];
 
                   return (
-                    <div key={action} className="flex items-center gap-2">
-                      <button
-                        onClick={() => performAction(resource.name, action)}
-                        disabled={isLoading}
-                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white text-xs font-medium transition-all disabled:opacity-50"
-                      >
-                        {isLoading ? (
-                          <Loader2 className="w-3 h-3 animate-spin" />
-                        ) : (
-                          <Icon className="w-3 h-3" />
-                        )}
-                        {label}
-                      </button>
-
-                      {/* Result badge */}
-                      <AnimatePresence>
-                        {result && (
-                          <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.8 }}
-                            className={`flex items-center gap-1 text-xs px-2 py-1 rounded-lg ${result.success
-                              ? "bg-emerald-950 text-emerald-400 border border-emerald-800"
-                              : "bg-red-950 text-red-400 border border-red-900"
-                              }`}
+                    <div key={action} className={`flex ${action === "Write" ? "flex-col w-full" : "items-center"} gap-2`}>
+                      {action === "Write" ? (
+                        <div className="flex flex-col gap-2 w-full mt-2">
+                          <textarea
+                            placeholder="Enter content to write..."
+                            value={writeContent[resource.name] || ""}
+                            onChange={e => setWriteContent(prev => ({ ...prev, [resource.name]: e.target.value }))}
+                            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-blue-500 resize-none"
+                            rows={3}
+                          />
+                          <div className="flex items-center gap-2">
+                            <button
+                              onClick={() => performAction(resource.name, action, writeContent[resource.name])}
+                              disabled={isLoading || !writeContent[resource.name]}
+                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white text-xs font-medium transition-all disabled:opacity-50"
+                            >
+                              {isLoading ? <Loader2 className="w-3 h-3 animate-spin" /> : <Pencil className="w-3 h-3" />}
+                              Write
+                            </button>
+                            <AnimatePresence>
+                              {result && (
+                                <motion.div
+                                  initial={{ opacity: 0, scale: 0.8 }}
+                                  animate={{ opacity: 1, scale: 1 }}
+                                  exit={{ opacity: 0, scale: 0.8 }}
+                                  className={`flex items-center gap-1 text-xs px-2 py-1 rounded-lg ${result.success
+                                      ? "bg-emerald-950 text-emerald-400 border border-emerald-800"
+                                      : "bg-red-950 text-red-400 border border-red-900"
+                                    }`}
+                                >
+                                  {result.success ? <CheckCircle className="w-3 h-3" /> : <XCircle className="w-3 h-3" />}
+                                  {result.success ? "Allowed" : "Denied"}
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        </div>
+                      ) : (
+                        <>
+                          <button
+                            onClick={() => performAction(resource.name, action)}
+                            disabled={isLoading}
+                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white text-xs font-medium transition-all disabled:opacity-50"
                           >
-                            {result.success
-                              ? <CheckCircle className="w-3 h-3" />
-                              : <XCircle className="w-3 h-3" />
-                            }
-                            {result.success ? "Allowed" : "Denied"}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                            {isLoading ? (
+                              <Loader2 className="w-3 h-3 animate-spin" />
+                            ) : (
+                              <Icon className="w-3 h-3" />
+                            )}
+                            {label}
+                          </button>
+                          <AnimatePresence>
+                            {result && (
+                              <motion.div
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
+                                className={`flex items-center gap-1 text-xs px-2 py-1 rounded-lg ${result.success
+                                  ? "bg-emerald-950 text-emerald-400 border border-emerald-800"
+                                  : "bg-red-950 text-red-400 border border-red-900"
+                                  }`}
+                              >
+                                {result.success
+                                  ? <CheckCircle className="w-3 h-3" />
+                                  : <XCircle className="w-3 h-3" />
+                                }
+                                {result.success ? "Allowed" : "Denied"}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </>
+                      )}
                     </div>
                   );
                 })}

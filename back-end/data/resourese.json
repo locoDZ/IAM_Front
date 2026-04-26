@@ -1,26 +1,56 @@
 [
-  {
-    "resource": "employee_records",
-    "department": "HR",
-    "classification": "confidential",
-    "file": "employee_records.txt"
-  },
-  {
-    "resource": "financial_reports",
-    "department": "Finance",
-    "classification": "secret",
-    "file": "financial_reports.txt"
-  },
-  {
-    "resource": "system_logs",
-    "department": "IT",
-    "classification": "confidential",
-    "file": "system_logs.txt"
-  },
-  {
-    "resource": "operations_schedule",
-    "department": "Operations",
-    "classification": "public",
-    "file": "operations_schedule.txt"
-  }
+    {
+        "resource": "financial_reports",
+        "department": "Finance",
+        "classification": "secret",
+        "file": "financial_reports.txt"
+    },
+    {
+        "resource": "system_logs",
+        "department": "IT",
+        "classification": "confidential",
+        "file": "system_logs.txt"
+    },
+    {
+        "resource": "payroll_data",
+        "department": "HR",
+        "classification": "secret",
+        "file": "payroll_data.txt"
+    },
+    {
+        "resource": "server_configs",
+        "department": "IT",
+        "classification": "secret",
+        "file": "server_configs.txt"
+    },
+    {
+        "resource": "network_topology",
+        "department": "IT",
+        "classification": "confidential",
+        "file": "network_topology.txt"
+    },
+    {
+        "resource": "finance_expense_reports",
+        "department": "Finance",
+        "classification": "confidential",
+        "file": "expense_reports.txt"
+    },
+    {
+        "resource": "finance_bank_statements",
+        "department": "Finance",
+        "classification": "secret",
+        "file": "bank_statements.txt"
+    },
+    {
+        "resource": "operations_schedule",
+        "department": "Operations",
+        "classification": "public",
+        "file": "operations_schedule.txt"
+    },
+    {
+        "resource": "operations_safety_manual",
+        "department": "Operations",
+        "classification": "confidential",
+        "file": "safety_manual.txt"
+    }
 ]
