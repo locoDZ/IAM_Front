@@ -1,3 +1,4 @@
+import httpx
 import json
 from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel
@@ -10,6 +11,18 @@ app = FastAPI(
     description="Authorization service supporting both RBAC and ABAC modes",
     version="2.0.0"
 )
+# adding kdc integration
+KDC_URL = "http://localhost:8001"
+
+async def validate_ticket_with_kdc(service_ticket: str) -> dict:
+    async with httpx.AsyncClient() as client:
+        resp = await client.post(f"{KDC_URL}/validate-ticket", json={
+            "service_ticket": service_ticket,
+            "authenticator": ""
+        })
+        if resp.status_code != 200:
+            raise HTTPException(status_code=401, detail="Invalid or expired ticket")
+        return resp.json()
 
 # ── File paths ────────────────────────────────────────────────────────────────
 # PDP.py fixed
@@ -18,13 +31,13 @@ PERMISSIONS_FILE = '../data/permisions.json'
 RESOURCES_FILE   = '../data/resourese.json'
 POLICY_FILE      = '../data/Policy.json'
 # ── Pydantic models ───────────────────────────────────────────────────────────
+#changed AuthorizeRequest to use kdc service_ticket instead of username this is the thing you told me about not working bro 
 class AuthorizeRequest(BaseModel):
-    username:  str
-    resource:  str
-    action:    str
-    mode:      str = "rbac"          # "rbac" or "abac"
-    time:      Optional[str] = None  # HH:MM  – ABAC only (defaults to system time)
-
+    service_ticket: str   # from KDC instead of username
+    resource: str
+    action: str
+    mode: str = "rbac"
+    time: Optional[str] = None
 class AuthorizeResponse(BaseModel):
     decision:         str
     mode:             str
@@ -41,6 +54,11 @@ class HealthResponse(BaseModel):
     service: str
     modes:   list
 
+def _map_clearance(clearance: str) -> str:
+    return {"secret": "high", "confidential": "medium", "public": "low"}.get(clearance, "low")
+
+def _map_location(location: str) -> str:
+    return "HQ" if location == "internal" else "Remote"
 # ── Generic helpers ───────────────────────────────────────────────────────────
 def load_json(filepath: str) -> Optional[Any]:
     try:
@@ -194,7 +212,8 @@ def health_check():
                           modes=["rbac", "abac"])
 
 @app.post("/authorize", response_model=AuthorizeResponse, tags=["Authorization"])
-def authorize(request: AuthorizeRequest):
+#i changed this to make it async so it can communicate with kdc  
+async def authorize(request: AuthorizeRequest):
     """
     Unified authorization endpoint.
 
@@ -204,6 +223,18 @@ def authorize(request: AuthorizeRequest):
     - **action**: `Read`, `Write`, or `Delete`
     - **time**: HH:MM string for ABAC time-based checks (optional; defaults to system time)
     """
+    # Validate ticket with KDC
+    ticket_data = await validate_ticket_with_kdc(request.service_ticket)
+    request_username = ticket_data["username"]
+
+    user = {
+        "name": ticket_data["username"],
+        "role": ticket_data.get("role", ""),
+        "department": ticket_data.get("department", ""),
+        "clearance": _map_clearance(ticket_data["clearance"]),
+        "location": _map_location(ticket_data.get("location", "internal"))
+    }
+
     mode = request.mode.lower()
     if mode not in ("rbac", "abac"):
         raise HTTPException(
@@ -222,14 +253,17 @@ def authorize(request: AuthorizeRequest):
                     "mode": mode}
         )
 
-    user = get_user(request.username)
-    if user is None:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail={"decision": "denied",
-                    "reason": f"User '{request.username}' not found",
-                    "mode": mode}
-        )
+    # If user shouldn't be overridden by ticket_data completely, you'd fetch them here:
+# Get user from KDC ticket instead of local DB
+    ticket_data = await validate_ticket_with_kdc(request.service_ticket)
+    user = {
+    "name": ticket_data["username"],
+    "role": ticket_data["role"],
+    "department": ticket_data["department"],
+    "clearance": _map_clearance(ticket_data["clearance"]),
+    "location": _map_location(ticket_data.get("location", "internal"))
+    }
+    request_username = user["name"]
 
     role = user.get("role")
     if not role:
@@ -247,7 +281,7 @@ def authorize(request: AuthorizeRequest):
             decision         = "granted" if permitted else "denied",
             mode             = "rbac",
             reason           = reason,
-            username         = request.username,
+            username         = request_username,
             role             = role,
             resource         = request.resource,
             action           = request.action,
@@ -267,7 +301,7 @@ def authorize(request: AuthorizeRequest):
         decision         = "granted" if permitted else "denied",
         mode             = "abac",
         reason           = reason,
-        username         = request.username,
+        username         = request_username,
         role             = role,
         resource         = request.resource,
         action           = request.action,

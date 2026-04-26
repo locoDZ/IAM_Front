@@ -4,22 +4,26 @@ from pydantic import BaseModel
 from typing import Optional, Dict, Any
 import os
 import uvicorn
+import httpx
 
 app = FastAPI(
     title="Resource Microservice",
     description="Handles read, write, and delete operations on resources",
     version="1.0.0"
 )
+PDP_URL = "http://localhost:8002"
 
 # ── File paths ────────────────────────────────────────────────────────────────
 RESOURCES_FILE   = '../data/resourese.json'
 RESOURCES_FOLDER = '../data/files'
 # ── Pydantic model ────────────────────────────────────────────────────────────
+#add service ticket to this stuff here
 class RequestedResource(BaseModel):
     name:    str
     type:    str
     action:  str
     content: Optional[str] = None
+    service_ticket: str
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 def load_resources():
@@ -38,6 +42,17 @@ def find_resource(name: str, resources_data: list):
     """Return the resource dict if found, else None."""
     return next((r for r in resources_data if r["resource"] == name), None)
 
+#add a function to check authorization with pdp
+async def check_authorization(service_ticket: str, resource_name: str, action: str):
+    async with httpx.AsyncClient() as client:
+        resp = await client.post(f"{PDP_URL}/authorize", json={
+            "service_ticket": service_ticket,
+            "resource": resource_name,
+            "action": action,
+            "mode": "abac"
+        })
+        if resp.status_code != 200:
+            raise HTTPException(status_code=403, detail="Access denied by PDP")
 # ── Core logic ────────────────────────────────────────────────────────────────
 def read(requested_resource: RequestedResource):
     resources_data = load_resources()
@@ -71,7 +86,7 @@ def write(requested_resource: RequestedResource):
 
 # ── Endpoints ─────────────────────────────────────────────────────────────────
 @app.post("/resources/read")
-def read_resource(requested_resource: RequestedResource):
+async def read_resource(requested_resource: RequestedResource):
     file_path = read(requested_resource)
     if file_path is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
@@ -81,7 +96,7 @@ def read_resource(requested_resource: RequestedResource):
     return {"content": content}
 
 @app.post("/resources/write")
-def write_resource(requested_resource: RequestedResource):
+async def write_resource(requested_resource: RequestedResource):
     if requested_resource.content is None:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
                             detail="Content is required for write operation")
@@ -92,7 +107,7 @@ def write_resource(requested_resource: RequestedResource):
     return result
 
 @app.post("/resources/delete")
-def delete_resource(requested_resource: RequestedResource):
+async def delete_resource(requested_resource: RequestedResource):
     result = delete(requested_resource)
     if result is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
