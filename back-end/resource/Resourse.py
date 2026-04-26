@@ -12,6 +12,10 @@ app = FastAPI(
     version="1.0.0"
 )
 PDP_URL = "http://localhost:8002"
+#health check endpoint
+@app.get("/health")
+def health():
+    return {"status": "Resource Server running", "port": 8003}
 
 # ── File paths ────────────────────────────────────────────────────────────────
 RESOURCES_FILE   = '../data/resourese.json'
