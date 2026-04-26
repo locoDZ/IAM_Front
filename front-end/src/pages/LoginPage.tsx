@@ -6,7 +6,7 @@ import { Button } from "../components/ui/Button";
 import { Input } from "../components/ui/Input";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -18,17 +18,18 @@ export default function LoginPage() {
     setError("");
 
     try {
-      const response = await fetch("/api/login", {
+      const response = await fetch("http://localhost:8000/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
       });
 
       const data = await response.json();
 
       if (data.success) {
-        // In a real app, we'd store the token
         sessionStorage.setItem("user", JSON.stringify(data.user));
+        sessionStorage.setItem("tgt", data.tgt);
+        sessionStorage.setItem("session_key", data.session_key);
         navigate("/dashboard");
       } else {
         setError(data.message || "Invalid credentials");
@@ -64,17 +65,17 @@ export default function LoginPage() {
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="space-y-2">
               <label className="text-sm font-medium text-zinc-700 ml-1">
-                Email address
+                Username
               </label>
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 w-4 h-4" />
                 <Input
-                  type="email"
-                  placeholder="name@example.com"
+                  type="text"
+                  placeholder="username"
                   className="pl-10"
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
             </div>
@@ -130,8 +131,8 @@ export default function LoginPage() {
               Demo Credentials
             </p>
             <div className="bg-zinc-50 p-3 rounded-lg text-xs text-zinc-600 space-y-1">
-              <p><span className="font-semibold">Email:</span> admin@example.com</p>
-              <p><span className="font-semibold">Password:</span> password123</p>
+              <p><span className="font-semibold">Users:</span> alice, bob, carol, dave</p>
+              <p><span className="font-semibold">Passwords:</span> 123, password, 123456, password123</p>
             </div>
           </div>
         </div>

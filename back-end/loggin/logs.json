@@ -1,0 +1,148 @@
+[
+  {
+    "id": "652f3e99-36dc-475a-bb5f-753be4171be8",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "79KZatbfN-NrV65g9vh7zg=="
+    },
+    "timestamp": "2026-04-26T01:20:45.376713"
+  },
+  {
+    "id": "4d576fdc-7d53-4f1d-9010-300b63e5e933",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T01:20:46.131197"
+  },
+  {
+    "id": "5921329b-c2c2-4d29-a36c-ab8bae4c9ccc",
+    "service": "KDC",
+    "event_type": "TICKET_REQUEST_FAILED",
+    "details": {
+      "username": "alice",
+      "reason": "Invalid authenticator"
+    },
+    "timestamp": "2026-04-26T01:20:52.040003"
+  },
+  {
+    "id": "a4791a5e-a081-4b35-ad83-ec6ffef95b79",
+    "service": "KDC",
+    "event_type": "TICKET_REQUEST_FAILED",
+    "details": {
+      "username": "alice",
+      "reason": "Invalid authenticator"
+    },
+    "timestamp": "2026-04-26T01:20:53.179957"
+  },
+  {
+    "id": "0465a282-abba-4b44-9873-8614c7c86bcb",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T01:20:57.028061"
+  },
+  {
+    "id": "90c31caa-c9df-4421-b534-4beb81ef32c2",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T01:21:00.004053"
+  },
+  {
+    "id": "6adc6392-fcd6-4e3f-b51c-445ab84dbfc4",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T01:21:03.707890"
+  },
+  {
+    "id": "74e000f4-72fd-4689-ad14-8f3bbeb09888",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T01:21:07.237171"
+  },
+  {
+    "id": "fe0822c8-6325-4cfe-945c-59808e8da57a",
+    "service": "KDC",
+    "event_type": "TICKET_REQUEST_FAILED",
+    "details": {
+      "username": "alice",
+      "reason": "Invalid authenticator"
+    },
+    "timestamp": "2026-04-26T01:21:14.645089"
+  },
+  {
+    "id": "315b5271-c115-46a4-ba81-8fc374d477e5",
+    "service": "KDC",
+    "event_type": "TICKET_REQUEST_FAILED",
+    "details": {
+      "username": "alice",
+      "reason": "Invalid authenticator"
+    },
+    "timestamp": "2026-04-26T01:21:15.461621"
+  },
+  {
+    "id": "a638e427-25c6-4cc3-9876-6dcdd9c57d03",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "system_logs"
+    },
+    "timestamp": "2026-04-26T01:21:18.611422"
+  },
+  {
+    "id": "0512c84c-a950-49e0-b8e0-ec639237424e",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "system_logs"
+    },
+    "timestamp": "2026-04-26T01:21:21.182811"
+  },
+  {
+    "id": "b57bbb10-8bf7-4e4d-babf-ec6f825edf7b",
+    "service": "KDC",
+    "event_type": "LOGIN_FAILED",
+    "details": {
+      "username": "david",
+      "reason": "Invalid credentials"
+    },
+    "timestamp": "2026-04-26T01:22:36.875417"
+  },
+  {
+    "id": "ad808278-a94a-42ad-b4cb-429e657069d3",
+    "service": "KDC",
+    "event_type": "LOGIN_FAILED",
+    "details": {
+      "username": "david",
+      "reason": "Invalid credentials"
+    },
+    "timestamp": "2026-04-26T01:22:45.802166"
+  },
+  {
+    "id": "9dd6c109-294c-4ec7-9125-7280e1dbac86",
+    "service": "KDC",
+    "event_type": "USER_CREATED",
+    "details": {
+      "username": "loco",
+      "role": "Employee",
+      "department": "Finance"
+    },
+    "timestamp": "2026-04-26T01:33:29.582263"
+  }
+]

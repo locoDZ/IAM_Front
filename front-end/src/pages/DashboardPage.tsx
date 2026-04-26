@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
-import { 
-  LayoutDashboard, 
-  BarChart3, 
-  Users, 
-  TrendingUp, 
-  Wallet, 
+import {
+  LayoutDashboard,
+  BarChart3,
+  Users,
+  TrendingUp,
+  Wallet,
   Target,
   LogOut,
   ChevronRight
@@ -14,27 +14,31 @@ import { Button } from "../components/ui/Button";
 
 const options = [
   {
-    id: "management",
-    title: "Management",
-    description: "Overview of operations, team performance, and strategic planning tools.",
+    id: "HR",
+    title: "HR",
+    description: "Employee records and company announcements.",
     icon: Users,
-    color: "bg-blue-500",
     gradient: "from-blue-500 to-indigo-600"
   },
   {
-    id: "finance",
+    id: "Finance",
     title: "Finance",
-    description: "Budget tracking, financial reporting, and revenue analytics dashboard.",
+    description: "Budget reports and financial invoices.",
     icon: Wallet,
-    color: "bg-emerald-500",
     gradient: "from-emerald-500 to-teal-600"
   },
   {
-    id: "marketing",
-    title: "Marketing",
-    description: "Campaign performance, social reach, and customer engagement metrics.",
+    id: "IT",
+    title: "IT",
+    description: "System configurations and incident logs.",
+    icon: BarChart3,
+    gradient: "from-purple-500 to-violet-600"
+  },
+  {
+    id: "Operations",
+    title: "Operations",
+    description: "Workflow documents and supply chain data.",
     icon: TrendingUp,
-    color: "bg-orange-500",
     gradient: "from-orange-500 to-rose-600"
   }
 ];
@@ -42,6 +46,25 @@ const options = [
 export default function DashboardPage() {
   const navigate = useNavigate();
   const user = JSON.parse(sessionStorage.getItem("user") || "{}");
+
+  const handleDepartmentClick = async (departmentId: string) => {
+    const tgt = sessionStorage.getItem("tgt");
+    try {
+      const resp = await fetch("http://localhost:8000/api/request-ticket", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          tgt_token: tgt,
+          service: `${departmentId.toLowerCase()}_service`
+        }),
+      });
+      const data = await resp.json();
+      sessionStorage.setItem("service_ticket", data.service_ticket);
+      navigate(`/department/${departmentId}`);
+    } catch (err) {
+      console.error("Failed to get service ticket", err);
+    }
+  };
 
   const handleLogout = () => {
     sessionStorage.removeItem("user");
@@ -75,14 +98,14 @@ export default function DashboardPage() {
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <div className="mb-12">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="text-3xl font-bold text-zinc-900 tracking-tight"
           >
             Welcome back, {user.name?.split(' ')[0] || "User"}
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1 }}
@@ -101,6 +124,7 @@ export default function DashboardPage() {
               transition={{ delay: 0.1 * (index + 1) }}
               whileHover={{ y: -5 }}
               className="group relative bg-white border border-zinc-200 rounded-3xl p-8 hover:shadow-2xl hover:shadow-zinc-200/50 transition-all cursor-pointer overflow-hidden"
+              onClick={() => handleDepartmentClick(option.id)}
             >
               <div className={`w-14 h-14 rounded-2xl mb-6 flex items-center justify-center bg-gradient-to-br ${option.gradient} text-white shadow-lg`}>
                 <option.icon className="w-7 h-7" />
@@ -123,7 +147,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Quick Stats Banner */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
@@ -138,7 +162,7 @@ export default function DashboardPage() {
               <p className="text-white/60 text-sm">Real-time data synchronization across all departments is active.</p>
             </div>
           </div>
-          
+
           <div className="flex gap-8">
             <div className="text-center">
               <p className="text-white/40 text-[10px] uppercase tracking-widest font-bold mb-1">System Load</p>

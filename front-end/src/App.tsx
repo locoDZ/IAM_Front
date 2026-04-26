@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import React from "react";
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
+import DepartmentPage from "./pages/DepartmentPage";
 
 // Basic Protected Route Component
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -17,16 +18,21 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
-        <Route 
-          path="/dashboard" 
+        <Route
+          path="/dashboard"
           element={
             <ProtectedRoute>
               <DashboardPage />
             </ProtectedRoute>
-          } 
+          }
         />
         <Route path="/" element={<Navigate to="/login" replace />} />
         {/* Fallback to login */}
+        <Route path="/department/:id" element={
+          <ProtectedRoute>
+            <DepartmentPage />
+          </ProtectedRoute>
+        } />
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </Router>

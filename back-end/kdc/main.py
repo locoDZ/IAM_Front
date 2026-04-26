@@ -249,7 +249,61 @@ async def list_users():
         username: {k: v for k, v in data.items() if k not in ("password", "plain_password")}
         for username, data in USERS_DB.items()
     }
+class CreateUserRequest(BaseModel):
+    username: str
+    password: str
+    role: str        # Admin, Manager, Employee
+    department: str  # HR, Finance, IT, Operations
+    clearance: str   # secret, confidential, public
+    location: str = "internal"
 
+@app.post("/users/create")
+async def create_user(req: CreateUserRequest):
+    if req.username in USERS_DB:
+        raise HTTPException(status_code=400, detail="User already exists")
+    if req.role not in ["Admin", "Manager", "Employee"]:
+        raise HTTPException(status_code=400, detail="Invalid role")
+    if req.department not in ["HR", "Finance", "IT", "Operations"]:
+        raise HTTPException(status_code=400, detail="Invalid department")
+    if req.clearance not in ["secret", "confidential", "public"]:
+        raise HTTPException(status_code=400, detail="Invalid clearance")
+
+    USERS_DB[req.username] = {
+        "password": hash_password(req.password),
+        "role": req.role,
+        "department": req.department,
+        "clearance": req.clearance,
+        "location": req.location
+    }
+
+    # Persist to users.json
+    with open(USERS_FILE, "w") as f:
+        json.dump({"users": USERS_DB}, f, indent=2)
+
+    await log_event("USER_CREATED", {
+        "username": req.username,
+        "role": req.role,
+        "department": req.department
+    })
+
+    return {"success": True, "message": f"User '{req.username}' created"}
+
+
+@app.delete("/users/{username}")
+async def delete_user(username: str):
+    if username not in USERS_DB:
+        raise HTTPException(status_code=404, detail="User not found")
+    if username in ["alice", "bob", "carol", "dave"]:
+        raise HTTPException(status_code=403, detail="Cannot delete default users")
+
+    del USERS_DB[username]
+
+    with open(USERS_FILE, "w") as f:
+        json.dump({"users": USERS_DB}, f, indent=2)
+
+    await log_event("USER_DELETED", {"username": username})
+
+    return {"success": True, "message": f"User '{username}' deleted"}
 
 if __name__ == "__main__":
     import uvicorn

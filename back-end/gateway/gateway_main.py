@@ -320,3 +320,20 @@ if __name__ == "__main__":
         print("\nShutting down all services...")
         for p in processes:
             p.terminate()
+class CreateUserRequest(BaseModel):
+    username: str
+    password: str
+    role: str
+    department: str
+    clearance: str
+    location: str = "internal"
+
+@app.post("/api/users/create")
+async def create_user(req: CreateUserRequest):
+    return await forward("POST", f"{KDC_URL}/users/create", req.dict())
+
+@app.delete("/api/users/{username}")
+async def delete_user(username: str):
+    async with httpx.AsyncClient() as client:
+        resp = await client.delete(f"{KDC_URL}/users/{username}", timeout=5.0)
+        return resp.json()
