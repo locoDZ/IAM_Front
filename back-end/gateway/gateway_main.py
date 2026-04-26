@@ -65,14 +65,22 @@ async def log_event(service: str, event_type: str, details: dict):
         pass
 
 
+#async def forward(method: str, url: str, payload: dict) -> dict:
+ #   """Forward a request to a microservice."""
+  #  async with httpx.AsyncClient() as client:
+   #     resp = await client.request(method, url, json=payload, timeout=10.0)
+    #    if resp.status_code >= 400:
+     ##  return resp.json()
 async def forward(method: str, url: str, payload: dict) -> dict:
-    """Forward a request to a microservice."""
     async with httpx.AsyncClient() as client:
         resp = await client.request(method, url, json=payload, timeout=10.0)
         if resp.status_code >= 400:
-            raise HTTPException(status_code=resp.status_code, detail=resp.json())
+            try:
+                detail = resp.json()
+            except Exception:
+                detail = resp.text or "Service error"
+            raise HTTPException(status_code=resp.status_code, detail=detail)
         return resp.json()
-
 
 # ─── Health ───────────────────────────────────────────────────────────────────
 
@@ -232,6 +240,15 @@ async def run_attack(req: AttackRequest):
     elif req.type == "krbtgt":
         return await forward("GET", f"{KDC_URL}/vuln/krbtgt", {})
 
+    elif req.type == "tamper":
+        return await forward("POST", f"{KDC_URL}/vuln/tamper-ticket", {
+            "service_ticket": req.service_ticket or "",
+            "new_role": req.role or "Admin"
+        })
+
+    elif req.type == "unauthorized":
+        return await forward("POST", f"{KDC_URL}/vuln/unauthorized-access", {})
+
     else:
         raise HTTPException(status_code=400, detail=f"Unknown attack type: {req.type}")
 
@@ -282,6 +299,24 @@ async def get_users():
         resp = await client.get(f"{KDC_URL}/users", timeout=5.0)
         return resp.json()
 
+class CreateUserRequest(BaseModel):
+    username: str
+    password: str
+    role: str
+    department: str
+    clearance: str
+    location: str = "internal"
+
+@app.post("/api/users/create")
+async def create_user(req: CreateUserRequest):
+    return await forward("POST", f"{KDC_URL}/users/create", req.dict())
+
+@app.delete("/api/users/{username}")
+async def delete_user(username: str):
+    async with httpx.AsyncClient() as client:
+        resp = await client.delete(f"{KDC_URL}/users/{username}", timeout=5.0)
+        return resp.json()
+
 if __name__ == "__main__":
     import uvicorn
     import subprocess
@@ -320,20 +355,3 @@ if __name__ == "__main__":
         print("\nShutting down all services...")
         for p in processes:
             p.terminate()
-class CreateUserRequest(BaseModel):
-    username: str
-    password: str
-    role: str
-    department: str
-    clearance: str
-    location: str = "internal"
-
-@app.post("/api/users/create")
-async def create_user(req: CreateUserRequest):
-    return await forward("POST", f"{KDC_URL}/users/create", req.dict())
-
-@app.delete("/api/users/{username}")
-async def delete_user(username: str):
-    async with httpx.AsyncClient() as client:
-        resp = await client.delete(f"{KDC_URL}/users/{username}", timeout=5.0)
-        return resp.json()

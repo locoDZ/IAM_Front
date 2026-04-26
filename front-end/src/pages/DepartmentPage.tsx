@@ -59,7 +59,7 @@ export default function DepartmentPage() {
     try {
       const endpoint = action === "Read" ? "/api/resource/read"
         : action === "Write" ? "/api/resource/write"
-        : "/api/resource/delete";
+          : "/api/resource/delete";
 
       const body: Record<string, string> = {
         service_ticket: serviceTicket,
@@ -86,8 +86,24 @@ export default function DepartmentPage() {
           }
         }));
       } else {
-        const detail = data.detail;
-        const reason = typeof detail === "object" ? detail.reason || detail.detail : detail;
+        let reason = "Access denied";
+        try {
+          const detail = data.detail;
+          if (typeof detail === "string") {
+            reason = detail;
+          } else if (Array.isArray(detail)) {
+            // Pydantic validation error
+            reason = detail.map((e: any) => e.msg || JSON.stringify(e)).join(", ");
+          } else if (typeof detail === "object" && detail !== null) {
+            reason = detail.reason
+              || detail.detail?.reason
+              || detail.detail
+              || detail.message
+              || "Access denied by policy";
+          }
+        } catch {
+          reason = "Access denied";
+        }
         setResults(prev => ({
           ...prev,
           [key]: { success: false, message: reason || "Access denied" }
@@ -197,11 +213,10 @@ export default function DepartmentPage() {
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.8 }}
-                            className={`flex items-center gap-1 text-xs px-2 py-1 rounded-lg ${
-                              result.success
-                                ? "bg-emerald-950 text-emerald-400 border border-emerald-800"
-                                : "bg-red-950 text-red-400 border border-red-900"
-                            }`}
+                            className={`flex items-center gap-1 text-xs px-2 py-1 rounded-lg ${result.success
+                              ? "bg-emerald-950 text-emerald-400 border border-emerald-800"
+                              : "bg-red-950 text-red-400 border border-red-900"
+                              }`}
                           >
                             {result.success
                               ? <CheckCircle className="w-3 h-3" />
@@ -225,18 +240,17 @@ export default function DepartmentPage() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
-                      className={`mx-6 mb-4 px-4 py-3 rounded-xl text-xs font-mono ${
-                        result.success
-                          ? "bg-emerald-950/50 text-emerald-300 border border-emerald-900"
-                          : "bg-red-950/50 text-red-300 border border-red-900"
-                      }`}
+                      className={`mx-6 mb-4 px-4 py-3 rounded-xl text-xs font-mono ${result.success
+                        ? "bg-emerald-950/50 text-emerald-300 border border-emerald-900"
+                        : "bg-red-950/50 text-red-300 border border-red-900"
+                        }`}
                     >
                       <div className="flex items-start gap-2">
                         {result.success
                           ? <CheckCircle className="w-3 h-3 mt-0.5 shrink-0" />
                           : <ShieldAlert className="w-3 h-3 mt-0.5 shrink-0" />
                         }
-                        <span>{result.content || result.message}</span>
+                        <span>{result.content || (typeof result.message === "string" ? result.message : JSON.stringify(result.message))}</span>
                       </div>
                     </motion.div>
                   )

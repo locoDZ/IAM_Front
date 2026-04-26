@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/Button";
+import { useEffect, useState } from "react";
 
 const options = [
   {
@@ -46,6 +47,50 @@ const options = [
 export default function DashboardPage() {
   const navigate = useNavigate();
   const user = JSON.parse(sessionStorage.getItem("user") || "{}");
+
+  const [users, setUsers] = useState<Record<string, any>>({});
+
+  const fetchUsers = async () => {
+    const resp = await fetch("http://localhost:8000/api/users");
+    const data = await resp.json();
+    setUsers(data);
+  };
+
+  useEffect(() => {
+    if (user.role === "Admin") fetchUsers();
+  }, [user.role]);
+
+  const [showUserPanel, setShowUserPanel] = useState(false);
+  const [newUser, setNewUser] = useState({
+    username: "", password: "", role: "Employee",
+    department: "HR", clearance: "public"
+  });
+  const [userMsg, setUserMsg] = useState<{ text: string, success: boolean } | null>(null);
+
+  const handleCreateUser = async () => {
+    const tgt = sessionStorage.getItem("tgt");
+    try {
+      const resp = await fetch("http://localhost:8000/api/users/create", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newUser),
+      });
+      const data = await resp.json();
+      setUserMsg({ text: resp.ok ? `User '${newUser.username}' created` : data.detail, success: resp.ok });
+    } catch {
+      setUserMsg({ text: "Connection error", success: false });
+    }
+  };
+
+  const handleDeleteUser = async (username: string) => {
+    try {
+      const resp = await fetch(`http://localhost:8000/api/users/${username}`, { method: "DELETE" });
+      const data = await resp.json();
+      setUserMsg({ text: resp.ok ? `User '${username}' deleted` : data.detail, success: resp.ok });
+    } catch {
+      setUserMsg({ text: "Connection error", success: false });
+    }
+  };
 
   const handleDepartmentClick = async (departmentId: string) => {
     const tgt = sessionStorage.getItem("tgt");
@@ -145,7 +190,87 @@ export default function DashboardPage() {
             </motion.div>
           ))}
         </div>
+        {user.role === "Admin" && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="mt-8 bg-white border border-zinc-200 rounded-3xl p-8"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-lg font-bold text-zinc-900">User Management</h3>
+              <button
+                onClick={() => setShowUserPanel(!showUserPanel)}
+                className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
+              >
+                {showUserPanel ? "Hide" : "Add User"}
+              </button>
+            </div>
 
+            {showUserPanel && (
+              <div className="grid grid-cols-2 gap-3 mb-4">
+                <input placeholder="Username" value={newUser.username}
+                  onChange={e => setNewUser({ ...newUser, username: e.target.value })}
+                  className="border border-zinc-200 rounded-lg px-3 py-2 text-sm" />
+                <input placeholder="Password" type="password" value={newUser.password}
+                  onChange={e => setNewUser({ ...newUser, password: e.target.value })}
+                  className="border border-zinc-200 rounded-lg px-3 py-2 text-sm" />
+                <select value={newUser.role}
+                  onChange={e => setNewUser({ ...newUser, role: e.target.value })}
+                  className="border border-zinc-200 rounded-lg px-3 py-2 text-sm">
+                  <option>Admin</option>
+                  <option>Manager</option>
+                  <option>Employee</option>
+                </select>
+                <select value={newUser.department}
+                  onChange={e => setNewUser({ ...newUser, department: e.target.value })}
+                  className="border border-zinc-200 rounded-lg px-3 py-2 text-sm">
+                  <option>HR</option>
+                  <option>Finance</option>
+                  <option>IT</option>
+                  <option>Operations</option>
+                </select>
+                <select value={newUser.clearance}
+                  onChange={e => setNewUser({ ...newUser, clearance: e.target.value })}
+                  className="border border-zinc-200 rounded-lg px-3 py-2 text-sm">
+                  <option value="public">Public</option>
+                  <option value="confidential">Confidential</option>
+                  <option value="secret">Secret</option>
+                </select>
+                <button onClick={handleCreateUser}
+                  className="bg-black text-white rounded-lg px-4 py-2 text-sm font-medium hover:bg-zinc-800 transition-colors">
+                  Create User
+                </button>
+              </div>
+            )}
+
+            {userMsg && (
+              <div className={`text-sm px-4 py-2 rounded-lg mb-4 ${userMsg.success ? "bg-emerald-50 text-emerald-700" : "bg-red-50 text-red-700"
+                }`}>
+                {userMsg.text}
+              </div>
+            )}
+
+            <div className="text-xs text-zinc-400 mt-2">
+              <div className="mt-4 space-y-2">
+                {Object.entries(users).map(([username, data]: [string, any]) => (
+                  <div key={username} className="flex items-center justify-between px-4 py-2 bg-zinc-50 rounded-xl">
+                    <div className="flex items-center gap-3">
+                      <span className="font-medium text-sm text-zinc-900">{username}</span>
+                      <span className="text-xs text-zinc-500">{data.role} · {data.department}</span>
+                    </div>
+                    <button
+                      onClick={() => handleDeleteUser(username).then(fetchUsers)}
+                      className="text-xs text-red-500 hover:text-red-700 transition-colors font-medium"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
         {/* Quick Stats Banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

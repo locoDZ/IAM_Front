@@ -5,6 +5,7 @@ from pydantic import BaseModel
 from typing import Optional, Dict, Any
 from datetime import datetime
 import uvicorn
+from typing import Optional, Dict, Any
 
 app = FastAPI(
     title="PDP (Policy Decision Point) Microservice",
@@ -195,7 +196,7 @@ def check_abac(user: Dict, resource: Dict, action: str,
     if default == "allow":
         return True, "Allowed by default policy", []
     return False, "Denied by default policy (no matching allow rule)", []
-
+    print(f"Checking action: '{action}' for user role: {user.get('role')}")
 # ── FastAPI endpoints ─────────────────────────────────────────────────────────
 @app.get("/", tags=["Root"])
 def read_root():
@@ -214,15 +215,7 @@ def health_check():
 @app.post("/authorize", response_model=AuthorizeResponse, tags=["Authorization"])
 #i changed this to make it async so it can communicate with kdc  
 async def authorize(request: AuthorizeRequest):
-    """
-    Unified authorization endpoint.
 
-    - **mode**: `rbac` (default) or `abac`
-    - **username**: e.g. `bob`, `alice`, `david`, `emma`
-    - **resource**: e.g. `employee_records`, `financial_reports`
-    - **action**: `Read`, `Write`, or `Delete`
-    - **time**: HH:MM string for ABAC time-based checks (optional; defaults to system time)
-    """
     # Validate ticket with KDC
     ticket_data = await validate_ticket_with_kdc(request.service_ticket)
     request_username = ticket_data["username"]
@@ -312,7 +305,51 @@ async def authorize(request: AuthorizeRequest):
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,
                             detail=response.dict())
     return response
+class DirectAuthorizeRequest(BaseModel):
+    user: Dict[str, Any]
+    resource: str
+    action: str
+    mode: str = "abac"
+    time: Optional[str] = None
 
+    class Config:
+        extra = "allow"
+@app.post("/authorize-direct", tags=["Authorization"])
+async def authorize_direct(request: DirectAuthorizeRequest):
+    mode = request.mode.lower()
+    
+    resource_info = get_resource(request.resource)
+    if resource_info is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={"decision": "denied", "reason": f"Resource '{request.resource}' not found"}
+        )
+
+    user = request.user
+    role = user.get("role")
+    if not role:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail={"decision": "denied", "reason": "User has no role assigned"}
+        )
+
+    if mode == "rbac":
+        permitted, reason = check_rbac(role, request.action)
+        if not permitted:
+            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,
+                                detail={"decision": "denied", "reason": reason})
+        return {"decision": "granted", "reason": reason, "username": user.get("name"),
+                "role": role, "resource": request.resource, "action": request.action,
+                "mode": "rbac", "matched_policies": None, "resource_details": resource_info}
+
+    env_time = request.time or datetime.now().strftime("%H:%M")
+    permitted, reason, matched = check_abac(user, resource_info, request.action, env_time)
+    if not permitted:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,
+                            detail={"decision": "denied", "reason": reason, "matched_policies": matched})
+    return {"decision": "granted", "reason": reason, "username": user.get("name"),
+            "role": role, "resource": request.resource, "action": request.action,
+            "mode": "abac", "matched_policies": matched, "resource_details": resource_info}
 # ── Debug / admin endpoints ───────────────────────────────────────────────────
 @app.get("/users", tags=["Debug"])
 def list_users():

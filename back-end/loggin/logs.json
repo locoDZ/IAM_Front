@@ -144,5 +144,1651 @@
       "department": "Finance"
     },
     "timestamp": "2026-04-26T01:33:29.582263"
+  },
+  {
+    "id": "a301d697-50d9-4aff-bbf7-e6649ee2377a",
+    "service": "KDC",
+    "event_type": "LOGIN_FAILED",
+    "details": {
+      "username": "david",
+      "reason": "Invalid credentials"
+    },
+    "timestamp": "2026-04-26T02:15:16.932029"
+  },
+  {
+    "id": "443dbd0a-2bbd-4a6b-90a9-78c3f525cdfa",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "96h_XNNmJHbT_PeKIOdQPQ=="
+    },
+    "timestamp": "2026-04-26T02:15:52.943939"
+  },
+  {
+    "id": "65e206f0-1d6a-43f4-b392-a3968b6b8003",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T02:15:53.653402"
+  },
+  {
+    "id": "d9e0d978-e7d6-4309-8134-0b70daafe4b9",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "X3DdJUSmrXHvoRi2ebF4tQ=="
+    },
+    "timestamp": "2026-04-26T02:19:08.713679"
+  },
+  {
+    "id": "9261cf30-cb31-40d3-8487-7110a8a6ee1f",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T02:19:09.423766"
+  },
+  {
+    "id": "520d4cd4-3835-4732-b9d5-2fdcd678eaba",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "asrep",
+      "username": null
+    },
+    "timestamp": "2026-04-26T02:51:53.564867"
+  },
+  {
+    "id": "fb0ed004-65e9-4591-b5ca-53c5bbf3dcf1",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "asrep",
+      "username": null
+    },
+    "timestamp": "2026-04-26T02:52:02.667401"
+  },
+  {
+    "id": "8690ba28-2f62-4473-98c0-e8a06e35bc30",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": null
+    },
+    "timestamp": "2026-04-26T02:52:07.336129"
+  },
+  {
+    "id": "0ae46907-b93c-4b92-ba2a-11c3f6305a14",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "asrep",
+      "username": "carol"
+    },
+    "timestamp": "2026-04-26T02:52:27.143587"
+  },
+  {
+    "id": "ad781330-3664-487b-8aa9-2d3da79c3345",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T02:52:55.204130"
+  },
+  {
+    "id": "d9bf9533-d6d8-4eea-8e29-de6d10332adf",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "replay",
+      "username": null
+    },
+    "timestamp": "2026-04-26T02:53:31.115815"
+  },
+  {
+    "id": "219f369d-5e81-4d3e-8c99-ac6c2cc53508",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "asrep",
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T02:54:25.191560"
+  },
+  {
+    "id": "3633b907-c0b4-4fe2-b29b-e77b7bb8aea7",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "loc"
+    },
+    "timestamp": "2026-04-26T02:54:42.196337"
+  },
+  {
+    "id": "cd6d7496-dfa7-48ba-9272-fd05498c6a3a",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "loc"
+    },
+    "timestamp": "2026-04-26T02:54:47.423788"
+  },
+  {
+    "id": "70152f2d-9205-45f6-bcef-b7fc5d908680",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "alice",
+      "role": "Admin",
+      "department": "IT",
+      "ticket_id": "d2BEnLHQWBCY9r58RuewXg=="
+    },
+    "timestamp": "2026-04-26T02:54:58.953770"
+  },
+  {
+    "id": "635f1073-c4ad-4ef2-900f-64cc96f474b6",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "alice"
+    },
+    "timestamp": "2026-04-26T02:54:59.699621"
+  },
+  {
+    "id": "14b84262-1187-4e74-8634-487f7a35b26b",
+    "service": "KDC",
+    "event_type": "USER_DELETED",
+    "details": {
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T02:55:07.861472"
+  },
+  {
+    "id": "cd6254ae-3e55-45ba-bca6-3253400586f3",
+    "service": "KDC",
+    "event_type": "USER_CREATED",
+    "details": {
+      "username": "loco",
+      "role": "Manager",
+      "department": "IT"
+    },
+    "timestamp": "2026-04-26T02:55:46.955612"
+  },
+  {
+    "id": "cc2cabcc-362d-435c-b1cf-306bdeb48aba",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T02:56:09.901881"
+  },
+  {
+    "id": "64f538e6-5c02-4577-a574-267e48043d98",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T02:58:52.693398"
+  },
+  {
+    "id": "92403e41-c8ae-41bb-8ba0-58d7c2b15cf4",
+    "service": "KDC",
+    "event_type": "USER_DELETED",
+    "details": {
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T03:00:14.934488"
+  },
+  {
+    "id": "51382a99-23b6-46d1-a72e-f427a12ed290",
+    "service": "KDC",
+    "event_type": "USER_CREATED",
+    "details": {
+      "username": "loco",
+      "role": "Employee",
+      "department": "HR"
+    },
+    "timestamp": "2026-04-26T03:00:29.571661"
+  },
+  {
+    "id": "c872dd26-3321-4d0c-9c82-777b064d318e",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T03:00:51.507372"
+  },
+  {
+    "id": "3e21d94f-89a4-428f-a563-c6739bfedac2",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "kerberoast",
+      "username": "loco"
+    },
+    "timestamp": "2026-04-26T03:03:35.107895"
+  },
+  {
+    "id": "13ef7a30-c6ef-468a-8348-79c3036a26c6",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "tamper",
+      "username": null
+    },
+    "timestamp": "2026-04-26T03:04:24.938530"
+  },
+  {
+    "id": "603b4b91-3897-476d-aabb-9748d46a4d2f",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "loco",
+      "service": "hr_service",
+      "role": "Admin"
+    },
+    "timestamp": "2026-04-26T03:05:38.908558"
+  },
+  {
+    "id": "66c7798d-58a9-4cad-bfcd-7961dc8d77a3",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "dcsync",
+      "username": null
+    },
+    "timestamp": "2026-04-26T03:06:23.698830"
+  },
+  {
+    "id": "7656dffa-7736-4f46-a309-d116aa0eede7",
+    "service": "Gateway",
+    "event_type": "ATTACK_DEMO",
+    "details": {
+      "type": "unauthorized",
+      "username": null
+    },
+    "timestamp": "2026-04-26T03:06:53.080457"
+  },
+  {
+    "id": "84c8c3b2-4b52-487f-89c4-cb7368b77c66",
+    "service": "KDC",
+    "event_type": "LOGIN_FAILED",
+    "details": {
+      "username": "carol",
+      "reason": "Invalid credentials"
+    },
+    "timestamp": "2026-04-26T03:08:37.476868"
+  },
+  {
+    "id": "c279d4fe-77c9-4946-99a9-229c4ee3f288",
+    "service": "KDC",
+    "event_type": "LOGIN_FAILED",
+    "details": {
+      "username": "carol",
+      "reason": "Invalid credentials"
+    },
+    "timestamp": "2026-04-26T03:08:41.935353"
+  },
+  {
+    "id": "f25b3ffd-756d-452d-a83d-a21cfa984aac",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "carol",
+      "role": "Employee",
+      "department": "HR",
+      "ticket_id": "_JH47hsUuShwI5iILbrhug=="
+    },
+    "timestamp": "2026-04-26T03:08:46.798549"
+  },
+  {
+    "id": "d494bda4-5a61-4f5e-a330-86b9a53d5eb1",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "carol"
+    },
+    "timestamp": "2026-04-26T03:08:47.521360"
+  },
+  {
+    "id": "65e1d2bd-f73a-410b-90fd-2a334479f440",
+    "service": "KDC",
+    "event_type": "TICKET_REQUEST_FAILED",
+    "details": {
+      "username": "carol",
+      "reason": "Invalid authenticator"
+    },
+    "timestamp": "2026-04-26T03:08:55.417512"
+  },
+  {
+    "id": "e700b664-d4eb-4256-9fd4-c9c5b55715d9",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T03:08:59.697412"
+  },
+  {
+    "id": "be42eb27-b894-4664-9a57-5a1b7252d880",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T03:09:02.826551"
+  },
+  {
+    "id": "0228a481-eaa9-468f-aa55-4859172a6e02",
+    "service": "KDC",
+    "event_type": "TICKET_REQUEST_FAILED",
+    "details": {
+      "username": "carol",
+      "reason": "Invalid authenticator"
+    },
+    "timestamp": "2026-04-26T03:09:14.130749"
+  },
+  {
+    "id": "8d23bc84-218a-4177-85b0-88e0ab0e1be7",
+    "service": "KDC",
+    "event_type": "TICKET_REQUEST_FAILED",
+    "details": {
+      "username": "carol",
+      "reason": "Invalid authenticator"
+    },
+    "timestamp": "2026-04-26T03:09:13.701127"
+  },
+  {
+    "id": "b156efb0-cb11-4b87-93eb-cc071c65e0a8",
+    "service": "KDC",
+    "event_type": "TICKET_REQUEST_FAILED",
+    "details": {
+      "username": "carol",
+      "reason": "Invalid authenticator"
+    },
+    "timestamp": "2026-04-26T03:09:15.277563"
+  },
+  {
+    "id": "c0d679e9-ab36-478d-9a0e-98ded62de544",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "financial_reports"
+    },
+    "timestamp": "2026-04-26T03:09:17.855046"
+  },
+  {
+    "id": "fb6c57e4-11e2-46cd-893c-b19b9cda132c",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T03:09:23.925089"
+  },
+  {
+    "id": "36878bca-8dd4-48e7-a78f-4d4c9f607eb8",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "carol",
+      "role": "Employee",
+      "department": "HR",
+      "ticket_id": "iK2Wpr7netFCk0TZWgtvdw=="
+    },
+    "timestamp": "2026-04-26T03:11:09.566861"
+  },
+  {
+    "id": "336d2351-08af-4f56-b4e8-a41aa3564504",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "carol",
+      "role": "Employee",
+      "department": "HR",
+      "ticket_id": "D8CDv9k6oNJBO4-Lh-Kfxw=="
+    },
+    "timestamp": "2026-04-26T03:16:06.235991"
+  },
+  {
+    "id": "b840f4bc-761c-41fb-903d-74741fd8e647",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "carol"
+    },
+    "timestamp": "2026-04-26T03:16:06.940777"
+  },
+  {
+    "id": "7445d350-095e-45ef-b250-33babea3045d",
+    "service": "KDC",
+    "event_type": "TICKET_REQUEST_FAILED",
+    "details": {
+      "username": "carol",
+      "reason": "Invalid authenticator"
+    },
+    "timestamp": "2026-04-26T03:18:00.683052"
+  },
+  {
+    "id": "aab53be5-db0f-444c-9b96-4e3b6d08c427",
+    "service": "KDC",
+    "event_type": "TICKET_REQUEST_FAILED",
+    "details": {
+      "username": "carol",
+      "reason": "Invalid authenticator"
+    },
+    "timestamp": "2026-04-26T03:20:18.180937"
+  },
+  {
+    "id": "3d20e084-707a-426c-a1bf-7fbd67af984f",
+    "service": "KDC",
+    "event_type": "TICKET_REQUEST_FAILED",
+    "details": {
+      "username": "carol",
+      "reason": "Invalid authenticator"
+    },
+    "timestamp": "2026-04-26T03:20:19.222164"
+  },
+  {
+    "id": "9528b193-e3c7-43f3-8b28-bf8c4ee61eea",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "ticket_id": "Z2K2-KzaUvOvSc1FJv7GHw=="
+    },
+    "timestamp": "2026-04-26T03:25:49.947850"
+  },
+  {
+    "id": "b7d5d7f9-2143-4ebe-bd32-60730347fbc9",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T03:25:50.650054"
+  },
+  {
+    "id": "644bedd5-e1c3-41af-b0d3-cb978f0f71b0",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "ticket_id": "CWVJqPG2xEE343HGHEV7Eg=="
+    },
+    "timestamp": "2026-04-26T03:25:52.136760"
+  },
+  {
+    "id": "1275736c-2448-4dfb-aa74-2c8020c69371",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T03:25:52.853503"
+  },
+  {
+    "id": "300c5418-0b37-461d-9d9f-9c79343a4ed9",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T03:25:54.678679"
+  },
+  {
+    "id": "501133a9-f4b8-4a68-b5b1-58a96fdb90e3",
+    "service": "Gateway",
+    "event_type": "RESOURCE_WRITE",
+    "details": {
+      "resource": "employee_records"
+    },
+    "timestamp": "2026-04-26T03:25:57.806469"
+  },
+  {
+    "id": "cc409e4f-5863-4035-bed6-a04ad578098c",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "ticket_id": "FVNlghabLpdnVAwuP_qTaA=="
+    },
+    "timestamp": "2026-04-26T03:26:08.559082"
+  },
+  {
+    "id": "e689bd4b-bd31-40a6-8d7c-9e8cfbab15fe",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T03:26:09.274183"
+  },
+  {
+    "id": "e08355ae-b239-4ac5-bd6f-1f4d2ff39119",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "financial_reports"
+    },
+    "timestamp": "2026-04-26T03:26:12.636743"
+  },
+  {
+    "id": "2273a8f4-65ad-4e14-8ff6-bb09de802f30",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "ticket_id": "rmt4GGBMfXj63OoYJZ5RNw=="
+    },
+    "timestamp": "2026-04-26T03:29:51.432450"
+  },
+  {
+    "id": "4b9edab6-dd46-40e7-89c6-b18498a606b3",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T03:29:52.137222"
+  },
+  {
+    "id": "4c4b33be-4ce0-4561-9cfd-c4a1be3be162",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T03:29:56.852299"
+  },
+  {
+    "id": "c8456b68-57f2-4fbf-b50c-c4f58be348a6",
+    "service": "KDC",
+    "event_type": "REPLAY_ATTACK_DETECTED",
+    "details": {
+      "username": "carol",
+      "ticket_id": "rmt4GGBMfXj63OoYJZ5RNw=="
+    },
+    "timestamp": "2026-04-26T03:29:58.317129"
+  },
+  {
+    "id": "d986490b-51a7-4a65-a74b-3443fef63969",
+    "service": "KDC",
+    "event_type": "REPLAY_ATTACK_DETECTED",
+    "details": {
+      "username": "carol",
+      "ticket_id": "rmt4GGBMfXj63OoYJZ5RNw=="
+    },
+    "timestamp": "2026-04-26T03:30:04.400337"
+  },
+  {
+    "id": "8e22d460-1351-406b-a1c0-cb14c231b7eb",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "ticket_id": "jYk_asgUqVlJLphzz9ONKQ=="
+    },
+    "timestamp": "2026-04-26T03:30:12.542609"
+  },
+  {
+    "id": "dbcfc60e-1308-46cb-ae9a-ea5a29a4d7b5",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T03:30:13.272276"
+  },
+  {
+    "id": "ae3cdc64-4213-499c-af58-5d4a147ad665",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T03:30:18.408767"
+  },
+  {
+    "id": "6d63d778-ae04-4d2f-942d-9d5b3e47d001",
+    "service": "KDC",
+    "event_type": "REPLAY_ATTACK_DETECTED",
+    "details": {
+      "username": "carol",
+      "ticket_id": "jYk_asgUqVlJLphzz9ONKQ=="
+    },
+    "timestamp": "2026-04-26T03:30:19.826848"
+  },
+  {
+    "id": "27ee4085-b43a-4908-b0a8-82c26f1417ff",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T03:35:25.472269"
+  },
+  {
+    "id": "807b698d-4190-4696-837c-43766a11279a",
+    "service": "KDC",
+    "event_type": "REPLAY_ATTACK_DETECTED",
+    "details": {
+      "username": "carol",
+      "ticket_id": "jYk_asgUqVlJLphzz9ONKQ=="
+    },
+    "timestamp": "2026-04-26T03:35:26.902167"
+  },
+  {
+    "id": "280754c9-debe-4d9b-aa76-2c3ecc9a62c3",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T03:37:41.111093"
+  },
+  {
+    "id": "3e48cd59-1d02-4744-a25c-662ff66c2b8b",
+    "service": "KDC",
+    "event_type": "REPLAY_ATTACK_DETECTED",
+    "details": {
+      "username": "carol",
+      "ticket_id": "jYk_asgUqVlJLphzz9ONKQ=="
+    },
+    "timestamp": "2026-04-26T03:37:42.562497"
+  },
+  {
+    "id": "c9c20274-d206-4cc1-b1ac-7ce0e35d686d",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T03:40:31.118227"
+  },
+  {
+    "id": "d12f247c-a95b-44ad-9afb-92cfbaf2a137",
+    "service": "KDC",
+    "event_type": "REPLAY_ATTACK_DETECTED",
+    "details": {
+      "username": "carol",
+      "ticket_id": "jYk_asgUqVlJLphzz9ONKQ=="
+    },
+    "timestamp": "2026-04-26T03:40:32.539807"
+  },
+  {
+    "id": "06b5852d-e82e-4e7f-9fb1-1d1934550034",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T03:46:54.712885"
+  },
+  {
+    "id": "dc9de214-257e-4450-90d4-17607ae40097",
+    "service": "KDC",
+    "event_type": "REPLAY_ATTACK_DETECTED",
+    "details": {
+      "username": "carol",
+      "ticket_id": "jYk_asgUqVlJLphzz9ONKQ=="
+    },
+    "timestamp": "2026-04-26T03:46:56.266704"
+  },
+  {
+    "id": "111b161c-a907-4bdf-8f3e-05894b867421",
+    "service": "KDC",
+    "event_type": "REPLAY_ATTACK_DETECTED",
+    "details": {
+      "username": "carol",
+      "ticket_id": "jYk_asgUqVlJLphzz9ONKQ=="
+    },
+    "timestamp": "2026-04-26T03:48:41.547715"
+  },
+  {
+    "id": "eda41694-03da-4f11-83af-92a9d3e620ef",
+    "service": "KDC",
+    "event_type": "REPLAY_ATTACK_DETECTED",
+    "details": {
+      "username": "carol",
+      "ticket_id": "jYk_asgUqVlJLphzz9ONKQ=="
+    },
+    "timestamp": "2026-04-26T03:51:37.225813"
+  },
+  {
+    "id": "8375c88a-6bfa-4e05-acf1-7c684b62dceb",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATION_FAILED",
+    "details": {
+      "username": "carol",
+      "reason": "Service ticket expired"
+    },
+    "timestamp": "2026-04-26T04:01:37.971358"
+  },
+  {
+    "id": "cf56a2ca-2ab3-46e1-a230-e807ceb83518",
+    "service": "KDC",
+    "event_type": "LOGIN_SUCCESS",
+    "details": {
+      "username": "carol",
+      "role": "Employee",
+      "department": "HR",
+      "ticket_id": "ZvDp8gJ-9DAolUuZ2mfDew=="
+    },
+    "timestamp": "2026-04-26T04:02:10.603806"
+  },
+  {
+    "id": "35b1ad6e-057f-4f85-aa77-637944ebfcd1",
+    "service": "Gateway",
+    "event_type": "LOGIN",
+    "details": {
+      "username": "carol"
+    },
+    "timestamp": "2026-04-26T04:02:11.299920"
+  },
+  {
+    "id": "e33cbea5-61d5-4dc9-910c-6c246f9a4ece",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "ticket_id": "fUvnwU0uvHgpBvyZd6X2KA=="
+    },
+    "timestamp": "2026-04-26T04:02:14.849579"
+  },
+  {
+    "id": "19bde549-f634-4f2e-8e47-ad8b6d77f9dd",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T04:02:15.555391"
+  },
+  {
+    "id": "604ba5da-2120-40a3-afa7-2b9e338ef229",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:02:19.039699"
+  },
+  {
+    "id": "b02f4d4c-c662-4ff8-ac77-45d0138874a4",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:02:20.692800"
+  },
+  {
+    "id": "eb190bb0-4ba0-41fe-815a-3a615755206d",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:02:22.111784"
+  },
+  {
+    "id": "35590e4b-3669-424a-b4d1-66bca55de2c0",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "ticket_id": "cFGuvS7-e_deG9hbq25DjQ=="
+    },
+    "timestamp": "2026-04-26T04:02:32.275821"
+  },
+  {
+    "id": "a07b577d-f536-48a7-83bc-1a51b8130882",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T04:02:32.968180"
+  },
+  {
+    "id": "dc0fb53c-3efd-4e73-81c2-7a0c516864aa",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:02:36.660647"
+  },
+  {
+    "id": "8eb692ca-0b67-4fe0-b6b5-9f1374cdf40a",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:02:38.313087"
+  },
+  {
+    "id": "445bd48f-9027-4aa3-a8cf-ca0270a4ab4b",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:02:39.751033"
+  },
+  {
+    "id": "cfd1585e-87b2-4635-adf1-a193314f74e4",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:05:15.650571"
+  },
+  {
+    "id": "4aa14055-c307-4133-8a5c-39d08839dcdd",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:05:17.382431"
+  },
+  {
+    "id": "9d15ba85-677b-4f0a-a6df-81004bd7e12b",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:05:18.823188"
+  },
+  {
+    "id": "a958202e-6955-4bdc-93f8-89535680cc9a",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T04:05:19.549569"
+  },
+  {
+    "id": "fa3b460e-98d2-47b8-8cd6-bb949fb2a6c8",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:05:25.853348"
+  },
+  {
+    "id": "c4379150-0471-4142-9c59-a3d919cb557b",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:05:27.544375"
+  },
+  {
+    "id": "6629c53d-6682-408c-8ac7-ccbe72ec9af1",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:05:28.944532"
+  },
+  {
+    "id": "61f7a334-c4be-4ca0-8b0c-9026962c1b0d",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:07:48.884037"
+  },
+  {
+    "id": "442d07a7-02d4-4a00-a5ae-a862df30f63f",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:07:50.573263"
+  },
+  {
+    "id": "0f69044c-e1fb-44e3-a710-e00c0e34c31f",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:07:51.985986"
+  },
+  {
+    "id": "6bf08c7c-0e00-415e-b5df-fcddfb0eb543",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:07:56.187358"
+  },
+  {
+    "id": "d5a8d128-e848-481c-a4a8-fbfd5585b619",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:07:57.866673"
+  },
+  {
+    "id": "10643211-e125-4046-b70f-51b9d7f5090a",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:07:59.279506"
+  },
+  {
+    "id": "d8e43608-d7dc-4647-8198-0550123464c7",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:08:08.913965"
+  },
+  {
+    "id": "3f9985fe-e476-46e8-b2db-ef5be77e88f8",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:08:10.571432"
+  },
+  {
+    "id": "ea07278b-5ae1-4fe8-8012-344fdf8b6668",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:08:12.012069"
+  },
+  {
+    "id": "1601ac1f-4fd1-4b64-8a3d-86acac90c317",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T04:08:12.754116"
+  },
+  {
+    "id": "0878b080-37c5-40ec-ba94-9beaa13c3679",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:10:13.734656"
+  },
+  {
+    "id": "89fb9ebd-310e-4d5e-bdf2-9932d55d0ee0",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:10:15.428692"
+  },
+  {
+    "id": "86d6688a-df8f-49b2-b7af-7e068c3ef8a6",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:10:16.841335"
+  },
+  {
+    "id": "e1057b9c-f10a-441d-9a1f-082c15933f66",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:10:49.035944"
+  },
+  {
+    "id": "d2406546-a357-4ffd-8971-053f3ed0c064",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:10:50.733177"
+  },
+  {
+    "id": "6b3a35bf-415f-4624-90e9-119f13728d63",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:10:52.162714"
+  },
+  {
+    "id": "4ccf132b-a042-4b11-a4d1-048bfa20af47",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T04:10:52.943729"
+  },
+  {
+    "id": "66f13361-2b25-427b-be08-00d090fd81d8",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:11:18.208212"
+  },
+  {
+    "id": "d47df490-c5da-45c8-9b63-42a252b7965a",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:11:19.912143"
+  },
+  {
+    "id": "e37b0b51-fc98-4aaf-b5fb-261bc8f5a96f",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:11:21.313937"
+  },
+  {
+    "id": "17f8fa0b-f47f-4532-9c62-06edd03ee40f",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T04:11:22.029810"
+  },
+  {
+    "id": "ea03994a-80b0-4c73-bcfc-216b720bfe6d",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "ticket_id": "AtRhYY9GuAwcMp2TIhWT-Q=="
+    },
+    "timestamp": "2026-04-26T04:12:14.025635"
+  },
+  {
+    "id": "5f996b87-f18a-48ac-9c93-49df9ea3b1e7",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "finance_service"
+    },
+    "timestamp": "2026-04-26T04:12:14.735531"
+  },
+  {
+    "id": "5fd6debe-441b-4066-8171-9aca4a6bd265",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:12:18.393099"
+  },
+  {
+    "id": "d2d8428c-83d3-4dab-8fda-8fb8d1570cf2",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:12:20.040942"
+  },
+  {
+    "id": "740d3704-ab95-4cc7-a6f8-e206f6544041",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:12:21.475153"
+  },
+  {
+    "id": "9c6a6861-7742-4c27-aa35-b8d107f75645",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:12:25.737815"
+  },
+  {
+    "id": "fbff92d8-dcdc-4612-8b3c-849573f830d7",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:12:27.518352"
+  },
+  {
+    "id": "1abc00d2-e105-4561-b737-f5f23977d0c2",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:12:28.931299"
+  },
+  {
+    "id": "461931bd-fa3d-4666-8d9f-7ed5283c4fa6",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T04:12:29.648591"
+  },
+  {
+    "id": "34ae59e9-c9b2-439b-b55c-6e5d4bd22249",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:15:04.499553"
+  },
+  {
+    "id": "722bab6d-2c05-42cb-a055-b6fb8050bb7e",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:15:06.242559"
+  },
+  {
+    "id": "cf43ea11-f04a-4fd1-9d55-bbca3648fc69",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:15:07.632850"
+  },
+  {
+    "id": "d46fe973-e7ac-4e96-9c95-2e334d37466c",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T04:15:08.359699"
+  },
+  {
+    "id": "9993ca1e-5da4-419a-bcf0-14a05d2781e2",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:15:12.644578"
+  },
+  {
+    "id": "86b7eee1-de86-4e81-a67b-c93d926e002c",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:15:14.301995"
+  },
+  {
+    "id": "89847ab8-dddd-40f7-8e75-b84d8ea92799",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:15:15.739895"
+  },
+  {
+    "id": "f85b824f-5f6f-45af-8994-7bdce0d64f2a",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:17:05.901678"
+  },
+  {
+    "id": "1f811c39-1046-4e0d-93e1-f9f6765ca42c",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:17:09.064586"
+  },
+  {
+    "id": "62221ac4-02b3-4d94-b093-947d9a33bbc7",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:20:36.526897"
+  },
+  {
+    "id": "7e6152c8-faea-4d50-84c1-328e12ed3bea",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:22:04.208228"
+  },
+  {
+    "id": "87b8c428-4f4b-420f-a984-c776aab2a287",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:23:00.742959"
+  },
+  {
+    "id": "81a3e4f0-0ab8-445b-8615-1a23ebaf3b42",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:28:33.780180"
+  },
+  {
+    "id": "3b2cfbbc-e409-4a5f-92e3-bcb9187e4665",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:29:42.150316"
+  },
+  {
+    "id": "eb472029-965d-4508-880d-22f43df29c71",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:29:48.180405"
+  },
+  {
+    "id": "96fd2dcb-e8a1-4938-ac08-4c98e5fcbfc4",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T04:29:49.159209"
+  },
+  {
+    "id": "d4cd7546-0015-4542-bedc-633816515f72",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "finance_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:30:49.807262"
+  },
+  {
+    "id": "adea3162-529e-45b3-aee5-8c72c321bdf1",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "it_service",
+      "ticket_id": "JugmNgRSvhQ_ieQH6vr4BA=="
+    },
+    "timestamp": "2026-04-26T04:31:21.100858"
+  },
+  {
+    "id": "08649b3e-9a73-435a-a518-9ae533ca0000",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "it_service"
+    },
+    "timestamp": "2026-04-26T04:31:21.890404"
+  },
+  {
+    "id": "43ce48cd-7e89-4651-8900-35a86c8fcbce",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "it_service",
+      "ticket_id": "hGd9by1OQj7zGVABBmZIUQ=="
+    },
+    "timestamp": "2026-04-26T04:31:23.149180"
+  },
+  {
+    "id": "ee3335bc-2ab0-48d2-bb83-a1849f87adf5",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "it_service"
+    },
+    "timestamp": "2026-04-26T04:31:23.855363"
+  },
+  {
+    "id": "830549b1-7f9c-4d26-a1ea-d4d726badf9d",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "it_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:31:27.016369"
+  },
+  {
+    "id": "c1e14a9f-ab2b-45b1-bd17-d757596e27d3",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "operations_service",
+      "ticket_id": "rGNxy9WrWkHiZS59shxQSw=="
+    },
+    "timestamp": "2026-04-26T04:31:37.026700"
+  },
+  {
+    "id": "49033487-39ab-4788-b5aa-79379844a85d",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T04:31:37.736638"
+  },
+  {
+    "id": "ddf1774d-e504-4f9f-bf98-6703effdc18d",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "operations_service",
+      "ticket_id": "dstAAuRutJDtnM78sEGcRw=="
+    },
+    "timestamp": "2026-04-26T04:31:39.090831"
+  },
+  {
+    "id": "e320eefe-2ee8-4d65-b15c-346650fdc437",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "operations_service"
+    },
+    "timestamp": "2026-04-26T04:31:39.796728"
+  },
+  {
+    "id": "6091ac1b-ee92-4982-9b23-ee93dc9abdf1",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "operations_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:31:41.798686"
+  },
+  {
+    "id": "3db9ee23-6a92-48b2-9d23-182f0ce1068a",
+    "service": "Gateway",
+    "event_type": "RESOURCE_READ",
+    "details": {
+      "resource": "operations_schedule"
+    },
+    "timestamp": "2026-04-26T04:31:42.774391"
+  },
+  {
+    "id": "0000ff51-92b1-4030-9682-b2ccdbfaf5a7",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "operations_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:31:55.989763"
+  },
+  {
+    "id": "cfe799ca-1f02-40d6-9f79-51afa8e98a1a",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "operations_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:32:01.055944"
+  },
+  {
+    "id": "997dd526-4f73-46fa-92d0-3b26b5dab701",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "ticket_id": "72XP0ddW4ulZNf_5GV6mrQ=="
+    },
+    "timestamp": "2026-04-26T04:32:13.882685"
+  },
+  {
+    "id": "eec26dbb-7a8f-4b52-89cb-a187bfd46d75",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T04:32:14.608111"
+  },
+  {
+    "id": "ddc9fbfe-40d9-4649-90ed-f5820c7ca7d5",
+    "service": "KDC",
+    "event_type": "TICKET_ISSUED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "ticket_id": "reXxzTULdpogL2vMDpjlFQ=="
+    },
+    "timestamp": "2026-04-26T04:32:15.932097"
+  },
+  {
+    "id": "4e236619-c778-45ae-9909-c3d891b9583d",
+    "service": "Gateway",
+    "event_type": "TICKET_REQUESTED",
+    "details": {
+      "service": "hr_service"
+    },
+    "timestamp": "2026-04-26T04:32:16.645731"
+  },
+  {
+    "id": "6faab366-1258-47d2-8ec7-d57fe278b949",
+    "service": "KDC",
+    "event_type": "TICKET_VALIDATED",
+    "details": {
+      "username": "carol",
+      "service": "hr_service",
+      "role": "Employee"
+    },
+    "timestamp": "2026-04-26T04:32:18.804528"
   }
 ]

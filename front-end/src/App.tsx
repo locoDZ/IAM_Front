@@ -3,6 +3,8 @@ import React from "react";
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import DepartmentPage from "./pages/DepartmentPage";
+import AttackPage from "./pages/AttackPage";
+
 
 // Basic Protected Route Component
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -34,6 +36,14 @@ export default function App() {
           </ProtectedRoute>
         } />
         <Route path="*" element={<Navigate to="/login" replace />} />
+        import AttackPage from "./pages/AttackPage";
+
+
+        <Route path="/attacks" element={
+          <ProtectedRoute>
+            <AttackPage />
+          </ProtectedRoute>
+        } />
       </Routes>
     </Router>
   );

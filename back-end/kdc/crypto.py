@@ -116,6 +116,7 @@ def build_service_ticket(username: str, user_data: dict, service: str, session_k
         "session_key": base64.b64encode(session_key).decode(),
         "issued_at": now.isoformat(),
         "expires_at": (now + timedelta(minutes=30)).isoformat(),
+        "location": user_data.get("location", "internal"),
     }
 
 

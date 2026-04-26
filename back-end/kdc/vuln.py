@@ -50,7 +50,7 @@ PREAUTHENTICATION_DISABLED = ["carol", "dave"]
 # [VULN] Used ticket IDs are not tracked
 # [FIX]  Secure version tracks all used ticket IDs
 used_ticket_ids_vuln: set = set()  # intentionally not checked
-
+demo_used_ids: set = set()
 
 # ─── Models ───────────────────────────────────────────────────────────────────
 
@@ -143,7 +143,7 @@ async def kerberoast(req: VulnLoginRequest):
     Attacker cracks it offline to get service account credentials.
     """
     user = USERS_DB.get(req.username)
-    if not user or user["password"] != hash_password(req.password):
+    if not user :
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
     # [VULN] Service ticket encrypted with weak static key (not rotated, not strong)
@@ -355,4 +355,95 @@ async def dcsync(req: DCsyncRequest):
         "description": "All user hashes dumped — role was never verified via KDC ticket",
         "hashes": dumped,
         "fix": "Role must be extracted from a validated KDC service ticket, not request body"
+    }
+# ─── Ticket Tampering ─────────────────────────────────────────────────────────
+"""
+Ticket Tampering:
+    [VULN] Allows modifying ticket fields (role, username, etc.) after decryption.
+           Without HMAC signature, the modified ticket can be re-encrypted and used.
+    [FIX]  Fernet encryption includes HMAC-based message authentication.
+           Any modification invalidates the ticket — decryption will fail.
+"""
+
+class TamperRequest(BaseModel):
+    service_ticket: str
+    new_role: str = "Admin"
+
+@router.post("/tamper-ticket")
+async def tamper_ticket(req: TamperRequest):
+    """
+    [ATTACK] Ticket Tampering
+    Decrypt a valid ticket, modify the role, re-encrypt and use it.
+    In secure mode this fails because Fernet HMAC detects tampering.
+    """
+    try:
+        ticket = decrypt_ticket(req.service_ticket)
+    except Exception:
+        return {
+            "vulnerability": "Ticket Tampering",
+            "success": False,
+            "message": "Could not decrypt ticket — Fernet HMAC rejected it",
+            "fix": "Fernet encryption includes HMAC — any modification invalidates the ticket"
+        }
+
+    original_role = ticket.get("role")
+    ticket["role"] = req.new_role
+    ticket["tampered"] = True
+
+    tampered_ticket = encrypt_ticket(ticket)
+
+    return {
+        "vulnerability": "Ticket Tampering",
+        "success": True,
+        "original_role": original_role,
+        "forged_role": req.new_role,
+        "tampered_ticket": tampered_ticket,
+        "warning": "Ticket role modified — use this with /validate-ticket to see if it passes",
+        "fix": "In secure mode, Fernet HMAC detects any modification and rejects the ticket"
+    }
+
+
+@router.post("/unauthorized-access")
+async def unauthorized_access():
+    """
+    [ATTACK] Unauthorized Access
+    Access a resource endpoint with no ticket at all.
+    Shows what happens when authentication is bypassed.
+    """
+    return {
+        "vulnerability": "Unauthorized Access",
+        "success": True,
+        "data": "SENSITIVE: All employee records dumped without authentication",
+        "records": [
+            {"name": "Alice Admin", "salary": 95000, "clearance": "secret"},
+            {"name": "Bob Manager", "salary": 75000, "clearance": "confidential"},
+            {"name": "Carol Employee", "salary": 45000, "clearance": "public"},
+        ],
+        "warning": "This endpoint requires no ticket — completely open",
+        "fix": "Every endpoint must validate a service ticket before returning any data"
+    }
+@router.post("/validate-ticket-secure")
+async def validate_secure(req: VulnValidateRequest):
+    try:
+        ticket = decrypt_ticket(req.service_ticket)
+    except Exception:
+        raise HTTPException(status_code=401, detail="Invalid ticket")
+
+    if is_expired(ticket["expires_at"]):
+        raise HTTPException(status_code=401, detail="Ticket expired")
+
+    if ticket["ticket_id"] in demo_used_ids:
+        return {
+            "vulnerability": "Replay Attack - BLOCKED",
+            "valid": False,
+            "message": "Replay detected — ticket ID already used",
+            "fix": "Ticket ID tracking prevents reuse"
+        }
+
+    demo_used_ids.add(ticket["ticket_id"])
+    return {
+        "vulnerability": "Replay Attack - First Use Allowed",
+        "valid": True,
+        "message": "First use accepted. Submit again to see replay blocked.",
+        "ticket_id": ticket["ticket_id"]
     }

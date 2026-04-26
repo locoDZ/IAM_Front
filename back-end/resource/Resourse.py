@@ -12,6 +12,7 @@ app = FastAPI(
     version="1.0.0"
 )
 PDP_URL = "http://localhost:8002"
+KDC_URL = "http://localhost:8001"
 #health check endpoint
 @app.get("/health")
 def health():
@@ -49,14 +50,35 @@ def find_resource(name: str, resources_data: list):
 #add a function to check authorization with pdp
 async def check_authorization(service_ticket: str, resource_name: str, action: str):
     async with httpx.AsyncClient() as client:
-        resp = await client.post(f"{PDP_URL}/authorize", json={
+        # Step 1: Validate ticket with KDC
+        kdc_resp = await client.post(f"{KDC_URL}/validate-ticket", json={
             "service_ticket": service_ticket,
+            "authenticator": ""
+        })
+        if kdc_resp.status_code != 200:
+            raise HTTPException(status_code=401, detail="Invalid or expired ticket")
+        
+        ticket_data = kdc_resp.json()
+
+        # Step 2: Build user from ticket data
+        user = {
+            "name": ticket_data["username"],
+            "role": ticket_data["role"],
+            "department": ticket_data["department"],
+            "clearance": ticket_data["clearance"],
+            "location": ticket_data.get("location", "internal")
+        }
+
+        # Step 3: Ask PDP with user data directly
+        pdp_resp = await client.post(f"{PDP_URL}/authorize-direct", json={
+            "user": user,
             "resource": resource_name,
             "action": action,
             "mode": "abac"
         })
-        if resp.status_code != 200:
-            raise HTTPException(status_code=403, detail="Access denied by PDP")
+        if pdp_resp.status_code != 200:
+            detail = pdp_resp.json().get("detail", "Access denied")
+            raise HTTPException(status_code=403, detail=detail)
 # ── Core logic ────────────────────────────────────────────────────────────────
 def read(requested_resource: RequestedResource):
     resources_data = load_resources()
@@ -91,6 +113,8 @@ def write(requested_resource: RequestedResource):
 # ── Endpoints ─────────────────────────────────────────────────────────────────
 @app.post("/resources/read")
 async def read_resource(requested_resource: RequestedResource):
+    await check_authorization(requested_resource.service_ticket,
+                              requested_resource.name, "Read")
     file_path = read(requested_resource)
     if file_path is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
@@ -101,6 +125,8 @@ async def read_resource(requested_resource: RequestedResource):
 
 @app.post("/resources/write")
 async def write_resource(requested_resource: RequestedResource):
+    await check_authorization(requested_resource.service_ticket,
+                              requested_resource.name, "Write")
     if requested_resource.content is None:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
                             detail="Content is required for write operation")
@@ -112,6 +138,8 @@ async def write_resource(requested_resource: RequestedResource):
 
 @app.post("/resources/delete")
 async def delete_resource(requested_resource: RequestedResource):
+    await check_authorization(requested_resource.service_ticket,
+                              requested_resource.name, "Delete")
     result = delete(requested_resource)
     if result is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
